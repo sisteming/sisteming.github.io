@@ -1,10 +1,10 @@
 ---
 layout: post
-title: First-Post
+title: New blog up and running using Jekyll
 ---
 
 Hey! This is my first post on my new blog running on Jekyll!
-Let's see if this is better than Wordpress. (shown below :point_down:).
+Let's see if this is better than Wordpress. 
 
 ![jekyll]({{ site.baseurl }}/images/jekyll.png)
 
