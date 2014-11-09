@@ -1,0 +1,87 @@
+---
+layout: post
+title: Oracle Database Silent Installation
+date: 2012-05-27 21:46:56.000000000 +01:00
+categories:
+- 11g
+- Database
+- Oracle
+tags:
+- '11.2'
+- database
+- database response
+- installation
+- oracle
+- oracle database
+- response file
+- silent
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '30428231'
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";s:1:"0";s:6:"author";s:8:"30428231";s:7:"blog_id";s:8:"30961676";s:9:"mod_stamp";s:19:"2012-05-27
+    20:46:56";}
+  publicize_results: a:1:{s:7:"twitter";a:1:{i:88527114;a:2:{s:7:"user_id";s:12:"marcobonezzi";s:7:"post_id";s:18:"206849012232495104";}}}
+  _wpas_done_twitter: '1'
+  _wpas_skip_1096740: '1'
+author: 
+---
+<p>Hi all!</p>
+<p>Last weeks have been a little busy, and from several tasks I had to do, there was an Oracle Database installation.</p>
+<p>There was a funny discussion about the version to install, where people recommended installing 10g only because was the version they worked with or because the how to they use it's only for 10g. </p>
+<p>At the end, we decided to install last version, 11.2, as the main use for this database would be a huge quantity of data in a data warehouse like use, and I had to install it.</p>
+<p>I thought that it would be easy, as you have the possibility of doing remote X from the server (yes, it was a server so we only had remote access), and you know the most "boring" part of installing Oracle Database it's the steps previous to installation, you know, kernel parameters, directories, users, permissions..</p>
+<p>But when I talked to my colleague and he told me that the server was installed without any X server package, and that they don't install it as a policy, I had to deal with a silent installation using only command line, so after some look on the internet, I found the process really straight forward, and in a few hours I had the software installed, the database created, and both the listener and enterprise manager console configured. And most important thing: the team waiting for the database happy for having it ready! :)</p>
+<p>Ok, you maybe like to know which are the steps or how difficult is an Oracle Database silent installation using response files? You have some examples and templates of response files in the directory response, where you have extracted the database software, so you only need to copy it and modify it to fit your needs.</p>
+<p>Here you are some examples on how my installation went:</p>
+<p>Software installation:</p>
+<p><code> ./runInstaller -silent \<br />
+-responseFile /home/oracle/install/database/response/db_install.rsp \<br />
+oracle.install.option=INSTALL_DB_SWONLY \<br />
+oracle.install.db.InstallEdition=EE \<br />
+security_updates_via_myoraclesupport=false \<br />
+decline_security_updates=true \<br />
+oracle.install.db.DBA_GROUP=dba \<br />
+oracle.install.db.OPER_GROUP=oper \<br />
+ORACLE_BASE="/oracle/app/oracle" \<br />
+ORACLE_HOME="/oracle/app/oracle/product/11.2.0/dbhome_1"<br />
+</code></p>
+<p>When you have your response files ready, you only have to input the previous command, specifying  the Oracle BASE and Oracle Home environment variables, and other options as groups or type of Database Installation, from the path when you have the oracle software extracted.</p>
+<p>When it finish the installation, the next step would be configuring the listener for the database. In this case, I used a almost default listener configuration, using the following command.</p>
+<p><code> netca /silent /responsefile /oracle/netca.rsp<br />
+</code></p>
+<p>When your listener is ready, you can create your database with a command like this, when you specify the DB name, in this case TESTDB, the template or model for the new database and other data as the type of storage (Filesystem or ASM) and passwords.</p>
+<p><code> dbca -silent -createDatabase -gdbName TESTDB -templateName Data_Warehouse.dbc \<br />
+-datafileDestination /oracle/oradata -sysPassword myPWD -systemPassword myPWD<br />
+-storageType FS \<br />
+</code></p>
+<p>The most tricky part from the installation was Enterprise Manager or DB console configuration, as it was needed by the team who is going to use the database created.</p>
+<p>It's important to have all Oracle environment variables like ORACLE_HOME, ORACLE_UNQ_NAME or ORACLE_BASE set to ensure that dbconsole configuration would be executed successfully:</p>
+<p><code><br />
+emca dbcontrol db -repos recreate -ORACLE_HOSTNAME gsc-analitics -SID TESTDB -PORT 1521 -ORACLE_HOME $ORACLE_HOME -DBDNMP_PWD sys </code><br />
+STARTED EMCA at May 17, 2012 12:48:46 PM<br />
+EM Configuration Assistant, Version 11.2.0.0.2 Production<br />
+Copyright (c) 2003, 2005, Oracle.  All rights reserved.</p>
+<p>Enter the following information:<br />
+Listener ORACLE_HOME [ /oracle/product/11.2.0/db ]:<br />
+Password for SYS user:<br />
+Password for DBSNMP user:<br />
+Password for SYSMAN user:<br />
+Email address for notifications (optional):<br />
+Outgoing Mail (SMTP) server for notifications (optional):<br />
+-----------------------------------------------------------------</p>
+<p>You have specified the following settings</p>
+<p>Database ORACLE_HOME ................ /oracle/product/11.2.0/db</p>
+<p>Local hostname ................ gsc-analitics<br />
+Listener ORACLE_HOME ................ /oracle/product/11.2.0/db<br />
+Listener port number ................ 1521<br />
+Database SID ................ TESTDB<br />
+Email address for notifications ...............<br />
+Outgoing Mail (SMTP) server for notifications ...............</p>
+<p>-----------------------------------------------------------------<br />
+Do you wish to continue? [yes(Y)/no(N)]: Y</p>
+<p>With this simple steps, you have installed your Oracle Database software, created a new database, configured a listener and also Enterprise Manager for the new database.</p>
+<p>And all without using X forwarding, only by command line. In fact, I'll have to think which way yo go for my next Oracle Database installation, as the response files method seems pretty fast, and very useful in case of many or similar database creation / installation.</p>
+<p>I hope this steps would be useful to someone and please feel free to post any comment or improvement! :)</p>
+<p>MB</p>

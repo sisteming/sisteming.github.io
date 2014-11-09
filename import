@@ -1,0 +1,9 @@
+#!/Users/marcobon/.rvm/rubies/ruby-2.1.4/bin/ruby
+
+require "jekyll-import";
+
+JekyllImport::Importers::WordpressDotCom.run({
+   "source" => "/Users/marcobon/Downloads/wordpress.xml",
+   "no_fetch_images" => false,
+   "assets_folder" => "assets"
+    })

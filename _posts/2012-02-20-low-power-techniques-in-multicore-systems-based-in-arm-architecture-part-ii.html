@@ -1,0 +1,48 @@
+---
+layout: post
+title: Low Power Techniques in multicore systems based in ARM architecture (Part II)
+date: 2012-02-20 21:46:00.000000000 +00:00
+categories:
+- Embedded
+- Linux
+- Pandaboard
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '30428231'
+  publicize_results: a:1:{s:7:"twitter";a:1:{i:88527114;a:2:{s:7:"user_id";s:12:"marcobonezzi";s:7:"post_id";s:18:"171712231501856769";}}}
+  _wpas_done_twitter: '1'
+author: 
+---
+<p>Hello my friends! :)</p>
+<p>In the previous post I introduced a little the idea about low power techniques in multicore systems based in ARM architecture but, what are those techniques? Well, we can divide them in two groups, those techniques from general Linux power management (and working in actual embedded devices) and those developed and implemented for recent multicore embedded devices.</p>
+<p>As Linux Power Management techniques the most relevant are:</p>
+<ul>
+<li>Suspend and Resume</li>
+<li>Runtime Power Management</li>
+<li>CPU Idle</li>
+<li>Dynamic Frequency and Voltage Scaling</li>
+<li>Power Management QoS</li>
+</ul>
+<p>Most of them, are really good for classical embedded devices, where there's only one processor or core, but what would happen with those techniques with multicore embedded devices like Pandaboard and its OMAP4 chip?</p>
+<p>The OMAP4 chip is based in two ARM Cortex A9 Processors, so it can balance the use of both CPU to achieve the best performance / power saving ratio:</p>
+<p><a href="http://sisteming.files.wordpress.com/2012/02/omap11.jpg"><img class="aligncenter size-medium wp-image-24" title="omap4" src="assets/omap11.jpg?w=300" alt="" width="300" height="175" /></a></p>
+<p><a href="http://sisteming.files.wordpress.com/2012/02/omap2.jpg"><img class="size-medium wp-image-23 aligncenter" title="omap4" src="assets/omap2.jpg?w=300" alt="" width="300" height="169" /></a></p>
+<p>As you can imagine, power management using two cores in embedded devices is very different from the usual power management on laptops or pcs: here you usually have a big constraint to your product, battery life.</p>
+<p>So some months ago, there was an important development activity looking for differents power management techniques for multicore ARM systems, and most of them were developed and supported by Linaro Power Management Group, who is doing such a great job trying to simplify one of the most common problems for all kind of embedded devices.</p>
+<p>The most interesting power management techniques developed for multicore systems are:</p>
+<ul>
+<li><em>CPUIdle</em></li>
+<li><em>CPUFreq</em></li>
+<li><em>CPUHotPlug</em></li>
+<li><em>Thermal</em></li>
+<li><em>CPUSet</em></li>
+<li><em>MultiScheduling</em></li>
+</ul>
+<p>I'd based my studies  in CPUHotplug, a cool technique that gives you the possibility of switching of one of the cores of the processor by a simple echo command from the terminal like this</p>
+<p><strong>$ echo 1 &gt; /sys/devices/system/cpu/cpu1/online</strong></p>
+<p>The most important advantages of this techniques are the lower consumption obtained using only one of the cores, and an easier condition to enter in processors low power modes. Of course there are some performance issue, but we are looking for a good low power environments and techniques, so we would look to performance effects later on.</p>
+<p>In the next post, we'll see the testing environment and several tests done with the pandaboard using CPU Hotplug, so stay tuned     ;)</p>
+<p>MB</p>
