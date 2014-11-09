@@ -1,6 +1,6 @@
 ---
 layout: post
-title: New blog up and running using Jekyll!
+title: First-Post
 ---
 
 Hey! This is my first post on my new blog running on Jekyll!
