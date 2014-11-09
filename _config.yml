@@ -18,7 +18,7 @@ avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/je
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble: 
-  email: sisteming@gmail.com	
+  email: mbonezzi@archlinux.us
   facebook: 
   flickr: 
   github: barryclark/jekyll-now
@@ -33,7 +33,7 @@ footer-links:
 disqus: 
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics: 
+google_analytics: UA-56573660-1
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
@@ -72,3 +72,8 @@ exclude:
     - Gemfile.lock
     - LICENSE
     - README.md
+
+    pages_list:       
+  About: '/about'
+  Archive: '/archive'
+  Feed: '/atom.xml'
