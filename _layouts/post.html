@@ -8,10 +8,11 @@ layout: default
   <div class="entry">
     {{ content }}
   </div>
-  {% include twitter_plug.html %}
+ 
 
   <div class="date">
     Written on {{ page.date | date: "%B %e, %Y" }}
+     {% include twitter_plug.html %}
   </div>
 
   {% include disqus.html disqus_identifier=page.disqus_identifier %}
