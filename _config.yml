@@ -73,7 +73,4 @@ exclude:
     - LICENSE
     - README.md
 
-    pages_list:       
-  About: '/about'
-  Archive: '/archive'
-  Feed: '/atom.xml'
+
