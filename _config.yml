@@ -25,9 +25,11 @@ footer-links:
   instagram: marcobonezzi
   linkedin: 
   pinterest: 
-  rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
+  rss: feed.xml
   twitter: marcobonezzi
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
+  favicon: images/favicon.ico
+
 
 # Your disqus shortname, entering this will enable commenting on posts
 disqus: 
