@@ -27,7 +27,7 @@ But not only this... Jolla met its target for the crowdfunded Jolla Tablet in le
 
 You can check it here on indiegogo: **[http://t.co/4afEPtnecT](http://t.co/4afEPtnecT)**
 
-**Jolla Table website: [http://jolla.com/tablet](http://jolla.com/tablet)**
+**Jolla Tablet website: [http://jolla.com/tablet](http://jolla.com/tablet)**
 
 You can also see first opinions in these articles:
 
