@@ -19,7 +19,7 @@ html {
 
 body {
 	background: $white;
-  font: 16px/1.6 $helvetica;
+  font: 14px/1.4 $helvetica;
   color: $darkGray;
 }
 
@@ -45,22 +45,22 @@ h1, h2, h3, h4, h5, h6 {
 }
   
 h1 {  
-  font-size: 30px;
+  font-size: 24 px;
   a {
     color: inherit;
   }
 }
 
 h2 {  
-  font-size: 24px;
+  font-size: 20 px;
 }
 
 h3 {  
-  font-size: 20px;
+  font-size: 16px;
 }
 
 h4 {  
-  font-size: 18px;
+  font-size: 16px;
   color: $gray;
 }
 
