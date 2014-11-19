@@ -20,8 +20,8 @@ That was not the case when Marc Dillon was on stage today. You can feel the pass
 <iframe width="560" height="315" src="//www.youtube.com/embed/jBQdfcLhts8" frameborder="0" allowfullscreen></iframe>
 
 The two real news of this presentation was:
-	- First tablet to be based on SailfishOS (I know about the dream of having a tablet with Meego...)
-	- First table to be crowdfunded by people, by the community supporting Jolla and SailfishOS.
+* 	First tablet to be based on SailfishOS (I know about the dream of having a tablet with Meego...)
+* 	First table to be crowdfunded by people, by the community supporting Jolla and SailfishOS.
 	
 But not only this... Jolla met its target for the crowdfunded Jolla Tablet in less than 3 hours...
 
