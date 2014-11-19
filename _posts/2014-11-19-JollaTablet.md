@@ -25,9 +25,9 @@ The two real news of this presentation was:
 	
 But not only this... Jolla met its target for the crowdfunded Jolla Tablet in less than 3 hours...
 
-You can check it here on indiegogo: **http://t.co/4afEPtnecT**
+You can check it here on indiegogo: **[http://t.co/4afEPtnecT](http://t.co/4afEPtnecT)**
 
-**Jolla Table website: http://jolla.com/tablet**
+**Jolla Table website: [http://jolla.com/tablet](http://jolla.com/tablet)**
 
 You can also see first opinions in these articles:
 
