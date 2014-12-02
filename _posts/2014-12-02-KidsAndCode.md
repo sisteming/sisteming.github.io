@@ -45,6 +45,9 @@ I also got to know some useful resources that you may find useful for you or you
 
 [IBM Academy of Technology YouTube channel](https://www.youtube.com/playlist?list=PLPoDFbU5X41maWZeui-Sk-MFCjlGTMOU9)
 
+This is an example of CoderDojo activities for kids hoping that you will enjoy it!
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/4NHjK-arPAs?list=PLPoDFbU5X41maWZeui-Sk-MFCjlGTMOU9" frameborder="0" allowfullscreen></iframe>
 
 Kids can now go from developing and building applications on their Raspberry Pi or Arduino, to deploy applications using a PaaS platform like Bluemix where they can use a wide variety of technology like NodeRed or Internet of Things Foundation to build the new great app they have in their mind.
 
@@ -63,8 +66,6 @@ Now...
 ![Code blocks]({{ site.baseurl }}/images/blocks.jpg)
 
 
-To close this post, I leave you an example of CoderDojo activities for kids hoping that you will enjoy it!
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/4NHjK-arPAs?list=PLPoDFbU5X41maWZeui-Sk-MFCjlGTMOU9" frameborder="0" allowfullscreen></iframe>
 
 
