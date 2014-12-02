@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2014-11-23 21:44:00
+date: 2014-11-24 21:44:00
 title: Create your Professional Journey using Linkedin and Slideshare
 ---
 
