@@ -53,9 +53,13 @@ Kids can now go from developing and building applications on their Raspberry Pi 
 Kids have the power and the key for the future. We used to play with Lego to build houses or cars. Now kids can play with code to build the world!
 
 Before...
+
 ![Lego bricks]({{ site.baseurl }}/images/Lego_Color_Bricks.jpg)
 
+
 Now...
+
+
 ![Code blocks]({{ site.baseurl }}/images/blocks.jpg)
 
 
