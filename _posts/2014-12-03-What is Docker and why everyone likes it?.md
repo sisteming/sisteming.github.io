@@ -37,4 +37,4 @@ If you want to know more about Docker, why not watch this video from Twitter Uni
 
 Other references:
 
-https://gigaom.com/2014/06/10/why-companies-like-google-spotify-and-red-hat-are-embracing-dockers-open-source-containers/
+[https://gigaom.com/2014/06/10/why-companies-like-google-spotify-and-red-hat-are-embracing-dockers-open-source-containers/](https://gigaom.com/2014/06/10/why-companies-like-google-spotify-and-red-hat-are-embracing-dockers-open-source-containers/)
