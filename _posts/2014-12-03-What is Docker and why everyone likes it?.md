@@ -22,7 +22,7 @@ That sounds cool isn't it?
 
 **Who is using it?**
 
-Nowadays we heard that more and more companies are starting to use it or to integrate with Docker and its container world. Companies like VMware, IBM, Yelp, Spotify, ebay and others are looking at this project and trying to integrate it accross different solutions.
+Nowadays we hear that more and more companies are starting to use it or to integrate with Docker and its container world. Companies like VMware, IBM, Yelp, Spotify, ebay and others are looking at this project and trying to integrate it accross different solutions.
 
 But what are the use cases for Docker? How can it help?
 Well, again, the docker website is the best source to get some information on this:
