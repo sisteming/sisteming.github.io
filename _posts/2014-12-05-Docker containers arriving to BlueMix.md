@@ -12,7 +12,7 @@ Just two days ago I was posting a blog about Docker, what it is and why many com
 
 Well, there are more fresh news... Just today, at DockerCon Europe, Docker and IBM announced the container service on Bluemix, based on Docker!
 
-![DockerBluemix]({{ site.baseurl }}/images/dockerbluemix2.png)
+![DockerBluemix]({{ site.baseurl }}/images/dockerBluemix2.png)
 
 The idea is this, based on the service description on BlueMix:
 
