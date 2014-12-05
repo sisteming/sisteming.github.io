@@ -14,9 +14,11 @@ Well, there are more fresh news... Just today, at DockerCon Europe, Docker and I
 
 ![DockerBluemix]({{ site.baseurl }}/images/dockerBluemix2.png)
 
-The idea is this, based on the service description on BlueMix:
+The idea, based on the service description on BlueMix, is the following:
 
-*The IBM Containers Service enables you to run Docker containers in a hosted cloud environment, on IBM Bluemix. Port your existing applications to IBM Bluemix and make them publically accessible by using containers. A private registry is provided where trusted images can be uploaded, stored and retrieved.*
+
+***The IBM Containers Service enables you to run Docker containers in a hosted cloud environment, on IBM Bluemix. Port your existing applications to IBM Bluemix and make them publically accessible by using containers. A private registry is provided where trusted images can be uploaded, stored and retrieved.***
+
 
 For more details on how to start using this, just head over to this article by Jason McGee on DeveloperWorks or have a look at the video linked below:
 
