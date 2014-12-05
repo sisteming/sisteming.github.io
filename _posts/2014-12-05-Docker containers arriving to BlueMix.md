@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-12-05 14:58:00
-title: Docker containers arriving to Bluemix port!
+title: Docker containers arriving to Bluemix!
 ---
 
 Hello my friends!
