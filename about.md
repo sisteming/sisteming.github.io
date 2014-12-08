@@ -4,10 +4,17 @@ title: About
 permalink: /about/
 ---
 
-Some information about me!
+Here I am supposed to write some information about me, right?
+Well, it will be very short: 
 
-For more info on me, have a look at my Twitter profile: 
-[http://twitter.com/marcobonezzi](http://twitter.com/marcobonezzi)
+My name is Marco, I work in IT and I am mainly focus on database and all around data technologies. 
+I also love to play and mess around with smartphones and I like Linux and Open Source projects as well.
 
-### Contact me
+In this blog I am writing my own personal view on some aspects of IT or just on some things I may be working with.
+
+If you are really looking for more info, just have a look at my Twitter profile and follow me:
+[@marcobonezzi](http://twitter.com/marcobonezzi)
+
+### Other contact details
+
 [mbonezzi@archlinux.us](mailto:mbonezzi@archlinux.us)
