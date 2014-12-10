@@ -31,7 +31,7 @@ One of the ideas of dashDB is to offer the flexibility of the Cloud for a soluti
 
 dashDB offers the ease of use with simple menus where we can load our data, query it and work with it, with some other features that make it a great product. The technology behind it is using in-database analytics processing combined with in-memory columnar database technology that can speed up massively your analytic workloads.
 
-Going to a lower level, dashDB runs on top of Softlater, and you can actually use and try dashDB from BlueMix and use it as a building block for your application. But it can also be used on its own to speed up your analytic processing by using the service on the Cloud. 
+Going to a lower level, dashDB runs on top of Softlater, and you can actually use and try dashDB from [BlueMix](www.bluemix.net) and use it as a building block for your application. But it can also be used on its own to speed up your analytic processing by using the service on the Cloud. 
 
 ![dashDB]({{ site.baseurl }}/images/dashdbdesc.png)
 
@@ -91,7 +91,7 @@ One easy use case I always think of is the following: you build a Node.js applic
 
 That's enough talking for today. Stay tuned for a technical post in the near future about using dashDB. Now just go ahead and try this yourself to see how this may be useful for your situation!
 
-Visit www.dashdb.com and start to see the potential of dashDB and if you have any question just feel free to leave a comment below!
+Visit [www.dashdb.com](www.dashdb.com) and start to see the potential of dashDB and if you have any question just feel free to leave a comment below!
 
 You can also get more information from the following links:
 
