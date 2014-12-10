@@ -64,7 +64,7 @@ From my experience using dashDB, I already have some favourites features that in
 - Data synchronization with Cloudant
 - R runtime environment ready to use
 
-### *Data synchronization with Cloudant*
+#### *Data synchronization with Cloudant*
 
 dashDB offers data synchronization from Cloudant (available from dashDB on Bluemix and on cloudant.com). This will seamlessly discover the JSON documents in our Cloudant database and automatically create the table structures to store the data coming from Cloudant. This might sound complicate, but it is all easily done in 3 or 4 mouse clicks, try it!
 
@@ -72,7 +72,7 @@ Once the tables are created, the data will start to be synchronized automaticall
 
 ![Cloudant Sync]({{ site.baseurl }}/images/cloudantsync.png)
 
-### *R runtime environment ready to use*
+#### *R runtime environment ready to use*
 
 The included R capabilities can be really useful to get useful insights from the data we have. And thanks to the R library for dashDB, we can benefit from in-database analytics functions that would not have to get the data out from the database and will speed up the processing of this analysis. 
 
