@@ -10,13 +10,13 @@ Hi again my friends!
 Two weeks ago I was lucky enough to go back home (@Madrid) for work, and stay there for few days.
 This was a great experience not just because of being at home and spending some time with my family. Also because of the opportunity to go back to where I started my career in IT some years ago: IBM in Madrid. While being there, I even had some time to meet my former manager and some colleagues to remember nice past situations.
 
-**Brother's questions**
+## **Brother's questions**
 
 But back to the track and to the original point of this blog now!
 When I speak to my brother, I often encourage him to look at Bluemix, to try it and play around with it. He is very curious and interested in IT even if he is still at school. 
 So what happened when I was there at home? Well, he just told me: Marco, now that you are here, please show me [Bluemix](https://console.ng.bluemix.net/) and what can I do with it?!
 
-**Where to start?**
+## **Where to start?**
 
 Then my question was: what to show to someone that has never used Bluemix or a similar platform? In turned out to be easier than what I expected.
 
@@ -34,7 +34,7 @@ I did the following:
 ![Internet of Things Foundation]({{ site.baseurl }}/images/iot.png)
 
 
-**Results**
+## **Results**
 
 After few minutes showing him how he could use Bluemix and in particular, what HE could do with it, he really looked interested and just when I left his room he was already creating his own account.
 

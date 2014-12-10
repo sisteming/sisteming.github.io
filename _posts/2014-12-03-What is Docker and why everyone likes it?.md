@@ -8,7 +8,7 @@ If you are interested in the IT industry, I am pretty sure you heard about Cloud
 
 ![Docker]({{ site.baseurl }}/images/docker-logo.png)
 
-**What is Docker?**
+## **What is Docker?**
 
 What is Docker? From their own definition at [https://www.docker.com/company/aboutus/](https://www.docker.com/company/aboutus/)
 
@@ -20,7 +20,7 @@ That sounds cool isn't it?
 ![Docker containers]({{ site.baseurl }}/images/docker.png)
 
 
-**Who is using it?**
+## **Who is using it?**
 
 Nowadays we hear that more and more companies are starting to use it or to integrate with Docker and its container world. Companies like VMware, IBM, Yelp, Spotify, ebay and others are looking at this project and trying to integrate it accross different solutions.
 
@@ -29,7 +29,7 @@ Well, again, the docker website is the best source to get some information on th
 
 [https://www.docker.com/resources/usecases/](https://www.docker.com/resources/usecases/)
 
-**I want to know more!!**
+## **I want to know more!!**
 
 If you want to know more about Docker, why not watch this video from Twitter University, where dotCloud founder and CTO Solomon Hykes gives a detailed presentation on it? Enjoy! 
 
