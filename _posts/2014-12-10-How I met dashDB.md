@@ -7,16 +7,16 @@ title: How I met dashDB
 Good morning my friends!
 It is cold this time here in Ireland, so I thought about remembering a warmer time, like last month in Las Vegas for the Insight 2014 conference!
 
-I was lucky to attend this conference (and fly over to Las Vegas) and this was a great time and a great opportunity to learn about new products and meet a lot of interesting people.
+I was lucky to attend this conference (and fly over to Las Vegas) and this was a great time and a great opportunity to learn about new products while at the same time getting to meet a lot of interesting people.
 
-Among my duties during the week there, the main one was to present a Lab Session I prepared about databases...datawarehouse...cloud...on Bluemix...
+During the week, I had to present a Lab Session I prepared about databases...datawarehouses...on cloud...on Bluemix...
 
 ## **Situation**
 
 Wait a moment. Cloud? Datawarehouse? Analytics? This sounds cool!
 Well, honestly, it is.
 
-During the IM general session, there was an announcement about a new product in the datawarehouse world, aiming to meet the needs of customer willing to have an hybrid approach for their Analytics. After the general session, the name of the product I was doing the presentation about was out there: **dashDB!**
+During the IM general session, there was an announcement about a new product in the datawarehouse world, aiming to meet the needs of customers willing to have an hybrid approach for their Analytics. After the general session, the name of the product I was doing the presentation about was out there: **dashDB!**
 
 ![dashDB Announcement]({{ site.baseurl }}/images/dashdb-announce.jpg)
 
@@ -47,7 +47,7 @@ It can be useful when they need to build a solution without worrying about the u
 
 ####  - *Business analysts*
 
-The idea of dashDB is to offer something easy to use, where users with little experience could load and get useful insights from their data without waiting for DBAs or to other departments for a report. Just go and get the insight you need from your data.
+The idea of dashDB is to offer something easy to use, where users with little experience could load and get useful insights from their data without waiting for DBAs or for other departments for a report. Just go and get the insight you need from your data.
 
 #### - *Application developers, idea creators*
 
@@ -83,7 +83,7 @@ With this, we can build our own R scripts to get a nice plot showing the insight
 
 #### *Easier with an example*
 
-These two features are my favourite, but imagine how could you use them together?
+These two features are my favourites, but imagine: how could you use them together?
 
 One easy use case I always think of is the following: you build a Node.js application, running on Bluemix. Using Node.js different API's (like Twitter) you store the JSON data coming from these API's in a Cloudant database. Now that you have your information (like tweets for a particular topic) stored in a NoSQL, JSON database in Cloudant, you can use the Cloudant sync option in dashDB to synchronize this data to your datawarehouse. With this option, you will have all the data coming from your tweets in a relational datawarehouse, easier to query and visualize. At this point, just go and use the R capabilities of dashDB to build an R script that will generate a plot showing statistical data (countries, number of retweets) from the tweets you analized for a particular topic. What do you think?
 
