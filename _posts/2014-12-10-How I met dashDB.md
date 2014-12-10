@@ -95,17 +95,17 @@ Visit [www.dashdb.com](http://www.dashdb.com) and start to see the potential of 
 
 You can also get more information from the following links:
 
-[*https://cloudant.com/blog/introducing-data-warehousing-and-analytics-with-cloudant-and-dashdb/*](https://cloudant.com/blog/introducing-data-warehousing-and-analytics-with-cloudant-and-dashdb/)
+[Learn more about dashDB, data warehousing and analytics power at your fingertips in the cloud](http://de.slideshare.net/cindyrussell129357/learn-more-about-dashdb-data-warehousing-and-analytics-power-at-your-fingertips-in-the-cloud)
 
-[*http://ibmdatawarehousing.wordpress.com/2014/10/27/warehouse-as-a-service-hensley/*](http://ibmdatawarehousing.wordpress.com/2014/10/27/warehouse-as-a-service-hensley/)
+[dashDB is Here, and This Changes Everything for Data Warehousing on the Cloud](http://ibmdatawarehousing.wordpress.com/2014/10/27/warehouse-as-a-service-hensley/)
 
-[*https://www.ibm.com/developerworks/community/blogs/5things/entry/5_things_to_know_about_dashdb_placeholder?lang=en*](https://www.ibm.com/developerworks/community/blogs/5things/entry/5_things_to_know_about_dashdb_placeholder?lang=en)
+[Introducing Data Warehousing and Analytics with Cloudant and dashDB](https://cloudant.com/blog/introducing-data-warehousing-and-analytics-with-cloudant-and-dashdb/)
 
-[*http://softwaretradecraft.com/ibm-dashdb-is-here-keeping-data-warehouse-infrastructure-out-of-your-way/*](http://softwaretradecraft.com/ibm-dashdb-is-here-keeping-data-warehouse-infrastructure-out-of-your-way/)
+[IBM dashDB is here! Keeping data warehouse infrastructure out of your way](http://softwaretradecraft.com/ibm-dashdb-is-here-keeping-data-warehouse-infrastructure-out-of-your-way/)
 
-[*http://de.slideshare.net/cindyrussell129357/learn-more-about-dashdb-data-warehousing-and-analytics-power-at-your-fingertips-in-the-cloud*](http://de.slideshare.net/cindyrussell129357/learn-more-about-dashdb-data-warehousing-and-analytics-power-at-your-fingertips-in-the-cloud)
+[5 Things to Know about dashDB](https://www.ibm.com/developerworks/community/blogs/5things/entry/5_things_to_know_about_dashdb_placeholder?lang=en)
 
-[*https://ibmdatawarehousing.wordpress.com/2014/12/04/data-security-in-dashdb/*](https://ibmdatawarehousing.wordpress.com/2014/12/04/data-security-in-dashdb/)	
+[Data Security in dashDB](https://ibmdatawarehousing.wordpress.com/2014/12/04/data-security-in-dashdb/)	
 
 
 
