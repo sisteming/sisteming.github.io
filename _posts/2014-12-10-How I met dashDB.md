@@ -33,7 +33,7 @@ dashDB offers the ease of use with simple menus where we can load our data, quer
 
 Going to a lower level, dashDB runs on top of Softlater, and you can actually use and try dashDB from BlueMix and use it as a building block to your application. But it can also be used on its own to speed up your analytic processing by using the service on the Cloud. 
 
-![dashDB]({{ site.baseurl }}/images/dashdbdesc.png =366x160)
+![dashDB]({{ site.baseurl }}/images/dashdbdesc.png)
 
 Remember, this is not just about going to the Cloud and moving everything. This is about hybrid Cloud and giving YOU the possibility to chose the best approach for your application or your business. You may already have your datawarehouse on premises, but just imagine how useful could be to rapidly deploy and use a service like this and not having to wait to get the infrastructure ready...
 
@@ -62,13 +62,13 @@ dashDB offers data synchronization from Cloudant (available from dashDB on Bluem
 
 Once the tables are created, the data will start to be synchronized automatically and more important, this will be a continuous feed into you datawarehouse.
 
-![Cloudant Sync]({{ site.baseurl }}/images/cloudantsync.png =187x162)
+![Cloudant Sync]({{ site.baseurl }}/images/cloudantsync.png)
 
 *R runtime environment ready to use*
 
 The included R capabilities can be really useful to get useful insights from the data we have. And thanks to the R library for dashDB, we can benefit from in-database analytics functions that would not have to get the data out from the database and will speed up the processing of this analysis. 
 
-![R plot]({{ site.baseurl }}/images/Rexample.png =151x115)
+![R plot]({{ site.baseurl }}/images/Rexample.png)
 
 
 With this, we can build our own R scripts to get a nice plot showing the insights that we just need from the data.
@@ -87,17 +87,17 @@ Visit www.dashdb.com and start to see the potential of dashDB and if you have an
 
 You can also get more information from the following links:
 
-[https://cloudant.com/blog/introducing-data-warehousing-and-analytics-with-cloudant-and-dashdb/](https://cloudant.com/blog/introducing-data-warehousing-and-analytics-with-cloudant-and-dashdb/)
+[*https://cloudant.com/blog/introducing-data-warehousing-and-analytics-with-cloudant-and-dashdb/*](https://cloudant.com/blog/introducing-data-warehousing-and-analytics-with-cloudant-and-dashdb/)
 
-[http://ibmdatawarehousing.wordpress.com/2014/10/27/warehouse-as-a-service-hensley/](http://ibmdatawarehousing.wordpress.com/2014/10/27/warehouse-as-a-service-hensley/)
+[*http://ibmdatawarehousing.wordpress.com/2014/10/27/warehouse-as-a-service-hensley/*](http://ibmdatawarehousing.wordpress.com/2014/10/27/warehouse-as-a-service-hensley/)
 
-[https://www.ibm.com/developerworks/community/blogs/5things/entry/5_things_to_know_about_dashdb_placeholder?lang=en](https://www.ibm.com/developerworks/community/blogs/5things/entry/5_things_to_know_about_dashdb_placeholder?lang=en)
+[*https://www.ibm.com/developerworks/community/blogs/5things/entry/5_things_to_know_about_dashdb_placeholder?lang=en*](https://www.ibm.com/developerworks/community/blogs/5things/entry/5_things_to_know_about_dashdb_placeholder?lang=en)
 
-[http://softwaretradecraft.com/ibm-dashdb-is-here-keeping-data-warehouse-infrastructure-out-of-your-way/](http://softwaretradecraft.com/ibm-dashdb-is-here-keeping-data-warehouse-infrastructure-out-of-your-way/)
+[*http://softwaretradecraft.com/ibm-dashdb-is-here-keeping-data-warehouse-infrastructure-out-of-your-way/*](http://softwaretradecraft.com/ibm-dashdb-is-here-keeping-data-warehouse-infrastructure-out-of-your-way/)
 
-[http://de.slideshare.net/cindyrussell129357/learn-more-about-dashdb-data-warehousing-and-analytics-power-at-your-fingertips-in-the-cloud](http://de.slideshare.net/cindyrussell129357/learn-more-about-dashdb-data-warehousing-and-analytics-power-at-your-fingertips-in-the-cloud)
+[*http://de.slideshare.net/cindyrussell129357/learn-more-about-dashdb-data-warehousing-and-analytics-power-at-your-fingertips-in-the-cloud*](http://de.slideshare.net/cindyrussell129357/learn-more-about-dashdb-data-warehousing-and-analytics-power-at-your-fingertips-in-the-cloud)
 
-[https://ibmdatawarehousing.wordpress.com/2014/12/04/data-security-in-dashdb/](https://ibmdatawarehousing.wordpress.com/2014/12/04/data-security-in-dashdb/)	
+[*https://ibmdatawarehousing.wordpress.com/2014/12/04/data-security-in-dashdb/*](https://ibmdatawarehousing.wordpress.com/2014/12/04/data-security-in-dashdb/)	
 
 
 
