@@ -63,12 +63,12 @@ We also select a table prefix that will be added to the table created inside das
 
 Once all the information is ready, we just start to sync the database and we can see the information progress like this: 
 
-![Cloudant Sync]({{ site.baseurl }}/images/cloudantsync1.png)
+![Cloudant Sync]({{ site.baseurl }}/images/cloudantsync2.png)
 
 This process will discover the document structure of the Cloudant datastore to create the necessary table structure inside our relational database in dashDB.
 This just takes a few seconds and when is completed, we will receive the confirmation that the data sync from Cloudant is in progress - and currently working!
 
-![Cloudant Sync]({{ site.baseurl }}/images/cloudantsync2.png)
+![Cloudant Sync]({{ site.baseurl }}/images/cloudantsync1.png)
 
 This is it. Done. By these simple steps, we have now all the data from our Cloudant database synchronized seamlessly into dashDB ready to be analyzed or visualized to get the insights we need. And remember, this is a continuous replication, so any data added to the Cloudant database will be in sync in dashDB too!
 
