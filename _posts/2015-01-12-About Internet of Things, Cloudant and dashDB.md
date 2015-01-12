@@ -26,7 +26,7 @@ This is where the connection of Systems of Engagement to Systems of Record has a
 ## **Connecting Systems of Engagement to Systems of Record**
 
 Systems of Engagements definition can be checked here: 
-![Systems of Engagement - Wikipedia](http://en.wikipedia.org/wiki/Systems_of_Engagement)
+[Systems of Engagement - Wikipedia](http://en.wikipedia.org/wiki/Systems_of_Engagement)
 
 Examples of these are social media platform, sensors, connected devices, wearables...
 
@@ -39,7 +39,7 @@ One example of connecting both kind of systems is offered by dashDB and Cloudant
 
 I will show you here how easy is to have our data synchronized from Cloudant into dashDB.
 
-As an example, I will use a NodeRed application deployed in BlueMix and using the Internet of Things foundation application (![Internet of Things Foundation - BlueMix](https://internetofthings.ibmcloud.com/) 
+As an example, I will use a NodeRed application deployed in BlueMix and using the Internet of Things foundation application ([Internet of Things Foundation - BlueMix](https://internetofthings.ibmcloud.com/) 
 
 ![IoT]({{ site.baseurl }}/images/IOTfund.png)
 
@@ -85,4 +85,4 @@ This is it for today my friends!
 
 I hope you enjoyed this quick view on dashDB and how to synchronize data from Cloudant! 
 
-Feel free to add any question on the comments below or just add me on Twitter! ![@marcobonezzi](www.twitter.com/marcobonezzi)
+Feel free to add any question on the comments below or just add me on Twitter! [@marcobonezzi](www.twitter.com/marcobonezzi)
