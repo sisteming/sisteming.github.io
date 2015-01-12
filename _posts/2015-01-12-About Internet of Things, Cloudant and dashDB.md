@@ -39,7 +39,7 @@ One example of connecting both kind of systems is offered by dashDB and Cloudant
 
 I will show you here how easy is to have our data synchronized from Cloudant into dashDB.
 
-As an example, I will use a NodeRed application deployed in BlueMix and using the Internet of Things foundation application ([Internet of Things Foundation - BlueMix](https://internetofthings.ibmcloud.com/) 
+As an example, I will use a NodeRed application deployed in BlueMix and using the Internet of Things foundation application ([Internet of Things Foundation - BlueMix](https://internetofthings.ibmcloud.com/))
 
 ![IoT]({{ site.baseurl }}/images/IOTfund.png)
 
