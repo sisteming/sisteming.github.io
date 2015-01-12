@@ -85,4 +85,4 @@ This is it for today my friends!
 
 I hope you enjoyed this quick view on dashDB and how to synchronize data from Cloudant! 
 
-Feel free to add any question on the comments below or just add me on Twitter! [@marcobonezzi](www.twitter.com/marcobonezzi)
+Feel free to add any question on the comments below or just add me on Twitter! [@marcobonezzi](https://twitter.com/marcobonezzi)
