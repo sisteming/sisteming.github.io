@@ -19,6 +19,10 @@ The specifications:
 - 1GB LPDDR2 SDRAM
 - Full compatibility with Raspberry Pi (cases and accesories!)
 
+You can find the full specifications and details here:
+
+
+
 ![Raspberry Pi 2]({{ site.baseurl }}/images/pi_board_big.jpg)
 
 The specifications are great right? What about the price?
@@ -26,7 +30,7 @@ A key point for the original Raspberry Pi was the price.
  
 So is the price still good enough for this new Raspberry Pi? Absolutely...
 
-35... 35$. What? For the new Raspberry Pi 2. Yes, you read right. 
+35... **35$**. What? For the new Raspberry Pi 2. Yes, you read right. 
 Like they say... *shut up and take my money!!!* :)
 
 Interested in getting one? You can try one of these two sites for Europe:
@@ -34,6 +38,7 @@ Interested in getting one? You can try one of these two sites for Europe:
 [Pimoroni Shop](http://shop.pimoroni.com/products/raspberry-pi-2-with-pibow)
 
 [RS Components](http://uk.rs-online.com/web/p/processor-microcontroller-development-kits/832-6274/)
+
 
 I will try to get one soon to play a bit and see how good it is compared to the original.
 
@@ -47,6 +52,8 @@ Anyone ordering one? Feel free to comment with what use you could make of it!
 More info:
 
 [Turbocharged Raspberry Pi 2 unleashed](http://www.theregister.co.uk/2015/02/02/raspberry_pi_model_2/)
+
 [Raspberry Pi 2 unveiled with faster processor and more memory](http://www.bbc.co.uk/news/technology-31088908)
+
 [Raspberry Pi 2 announced with substantial hardware upgrades](http://www.engadget.com/2015/02/02/raspberry-pi-2/)
 
