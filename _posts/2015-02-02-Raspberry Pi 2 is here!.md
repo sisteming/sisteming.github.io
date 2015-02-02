@@ -19,7 +19,7 @@ The specifications:
 - 1GB LPDDR2 SDRAM
 - Full compatibility with Raspberry Pi (cases and accesories!)
 
-You can find the full specifications and details here:
+
 
 
 
