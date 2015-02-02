@@ -19,7 +19,9 @@ The specifications:
 - 1GB LPDDR2 SDRAM
 - Full compatibility with Raspberry Pi (cases and accesories!)
 
+You can have a look at the full specifications here:
 
+[Raspberry Pi 2, Model B](http://docs-europe.electrocomponents.com/webdocs/138e/0900766b8138e68d.pdf)
 
 
 
