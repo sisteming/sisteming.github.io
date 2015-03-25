@@ -54,8 +54,9 @@ I recently came accross to [kitematic](https://kitematic.com/), a project that c
 Well, I can tell you they must be pretty good given that know it is also part of Docker itself!
 
 From a quick try, it looks like it will do the following tasks for you just by opening the app
-	-Install Docker and VirtualBox
-	-Start Docker VM
+
+	*Install Docker and VirtualBox
+	*Start Docker VM
 	
 Once the Docker VM is started, you will get a nice app showing your containers and some recommended already defined images. 
 
@@ -84,7 +85,7 @@ It was indeed interesting to see how different products and projects are going t
 
 But it was even cooler when I spotted a Docker booth at the Expo! I definitely went to speak with them and it was great to hear some of their plans. And... of course to get a Docker t-shirt and some stickers too!
 
-![Docker booth]({{ site.baseurl }}/images/dockerbooth.png)
+![Docker booth]({{ site.baseurl }}/images/dockerbooth.jpeg)
 
 ![Docker sticker]({{ site.baseurl }}/images/dockersticker.png)
 
