@@ -55,8 +55,8 @@ Well, I can tell you they must be pretty good given that know it is also part of
 
 From a quick try, it looks like it will do the following tasks for you just by opening the app
 
-	*Install Docker and VirtualBox
-	*Start Docker VM
+	-Install Docker and VirtualBox
+	-Start Docker VM
 	
 Once the Docker VM is started, you will get a nice app showing your containers and some recommended already defined images. 
 
