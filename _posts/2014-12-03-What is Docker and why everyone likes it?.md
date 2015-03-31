@@ -6,7 +6,7 @@ title: What is Docker and why everyone likes it?
 
 If you are interested in the IT industry, I am pretty sure you heard about Cloud, about virtualization, stacks and similar terminology. If you follow the IT industry, there is a good probability that you may also heard about Docker.
 
-![Docker]({{ site.baseurl }}/images/docker-logo.png)
+![Docker]({{ site.baseurl }}/images/docker-logo.jpeg)
 
 ## **What is Docker?**
 
