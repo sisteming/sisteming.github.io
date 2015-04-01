@@ -60,7 +60,7 @@ From a quick try, it looks like it will do the following tasks for you just by o
 	
 Once the Docker VM is started, you will get a nice app showing your containers and some recommended already defined images. 
 
-![kitematic App]({{ site.baseurl }}/images/kitematicApp.png)
+![kitematic App]({{ site.baseurl }}/images/kitematicApp.png =250x)
 
 This seems too easy right? 
 
