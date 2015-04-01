@@ -60,11 +60,11 @@ From a quick try, it looks like it will do the following tasks for you just by o
 	
 Once the Docker VM is started, you will get a nice app showing your containers and some recommended already defined images. 
 
-![kitematic App]({{ site.baseurl }}/images/kitematicApp.png =250x)
+![kitematic App]({{ site.baseurl }}/images/kitematicApp.png)
 
 This seems too easy right? 
 
-![kitematic New container]({{ site.baseurl }}/images/kitematicNewC.png =150x)
+![kitematic New container]({{ site.baseurl }}/images/kitematicNewC.png)
 
 Well, you just select 'Create' on the image you want to use and in seconds (literally!) your new container will be created from the chosen image.
 
