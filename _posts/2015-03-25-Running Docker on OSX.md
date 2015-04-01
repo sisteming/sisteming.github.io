@@ -64,7 +64,7 @@ Once the Docker VM is started, you will get a nice app showing your containers a
 
 This seems too easy right? 
 
-![kitematic New container]({{ site.baseurl }}/images/kitematicNewC.png){: .minipic}
+![kitematic New container]({{ site.baseurl }}/images/kitematicNewC.png){: .center-image}
 
 Well, you just select 'Create' on the image you want to use and in seconds (literally!) your new container will be created from the chosen image.
 
