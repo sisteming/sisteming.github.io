@@ -32,13 +32,13 @@ Once we bind the service to our application, we are able to connect the applicat
 
 According to the BlueMix service description, MongoLab is a fully-managed cloud database service featuring highly-available MongoDB databases, automated backups, web-based tools, 24/7 monitoring, and expert support.
 
-![Mongolab service details]({{ site.baseurl }}/images/mongolab_detail.png)
+![Mongolab service]({{ site.baseurl }}/images/mongolab.png)
 
 From the service console on mongolab, we can easily see our mongodb databases, collections, and create even more just with few clicks.
 
-![Mongolab service details]({{ site.baseurl }}/images/mongolab_detail.png)
+![Mongolab Console details]({{ site.baseurl }}/images/mongolab_detail.png)
 
-![Mongolab service details]({{ site.baseurl }}/images/mongolab_detail.png)
+![Mongolab Connection details]({{ site.baseurl }}/images/mongolab_detail2.png)
 
 ### Getting your hards dirty
 
