@@ -38,6 +38,8 @@ From the service console on mongolab, we can easily see our mongodb databases, c
 
 ![Mongolab Console details]({{ site.baseurl }}/images/mongolab_detail.png)
 
+You can also use your own mongodb client and connect from your local machine to your mongodb instance running on MongoLab!
+
 ![Mongolab Connection details]({{ site.baseurl }}/images/mongolab_detail2.png)
 
 ### Getting your hards dirty
