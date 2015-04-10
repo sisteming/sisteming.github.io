@@ -48,7 +48,7 @@ Why don't you try yourself to see what could suit you better?
 
 Here is an interesting article that will show you how to build a real-time poll application with Node.js, Express, AngularJS and MongoDB. And yes, all on Bluemix!
 
-![Build a real-time polls application with Node.js, Express, AngularJS, and MongoDB](https://www.ibm.com/developerworks/library/wa-nodejs-polling-app/)
+[Build a real-time polls application with Node.js, Express, AngularJS, and MongoDB](https://www.ibm.com/developerworks/library/wa-nodejs-polling-app/)
 
 Have you already used one of the services and have a preference? Or have you implemented the application in the tutorial above?
 Feel free to drop me a comment below!
