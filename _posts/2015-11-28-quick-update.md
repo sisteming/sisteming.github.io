@@ -22,6 +22,8 @@ As you know, in the past, some of my recent posts here were related to IBM cloud
 
 That's one of the positive sides of this year: I changed from working with IBM and being involved in Bluemix and the IM solutions in IBM, to working for MongoDB, **THE** noSQL open-source database.
 
+![MongoDB]({{ site.baseurl }}/images/mongodb-logo-rgb.jpeg)
+
 Working for MongoDB is being a great experience so far, both for the size of the company, the way things work and specially for the kind of work we do in our team: helping clients to be successful deploying MongoDB.
 
 This involves lots of log analysis, infrastructure review, dealing with code, Linux, performance... All things I always liked.
