@@ -12,6 +12,8 @@ As you know, this blog is powered by [Jekyll](https://jekyllrb.com/) and [github
 
 [Using Jekyll](http://sisteming.github.io/2014/11/17/Jekyll/)
 
+
+
 Thanks again to [@dottorblaster](https://twitter.com/dottorblaster) for showing [how cool your blog can be with this](http://dottorblaster.it/2014/09/addio-wordpress-benvenuto-jekyll/).
 
 The beauty of this system is that each post is written in markdown and can easily done from a simple text editor, using something like Sublime Text, or with a dedicated markdown client like 'MacDown' for Mac.
