@@ -18,8 +18,8 @@ html {
 }
 
 body {
-	background: $white;
-  font: 14px/1.4 $helvetica;
+  background: $white;
+  font: 18px/1.4 $helvetica;
   color: $darkGray;
 }
 
@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.4;
   }
 }
-  
+
 h1 {
   font-size: 30px;
   a {
@@ -51,26 +51,16 @@ h1 {
   }
 }
 
-
-h2 {  
-  font-size: 22px;
-=======
 h2 {
   font-size: 24px;
-
 }
 
 h3 {
   font-size: 20px;
 }
 
-<<<<<<< HEAD
-h4 {  
-  font-size: 20px;
-=======
 h4 {
   font-size: 18px;
-
   color: $gray;
 }
 
@@ -81,7 +71,7 @@ p {
 a {
   color: $blue;
   text-decoration: none;
-	cursor: pointer;
+  cursor: pointer;
   &:hover, &:active {
     color: $blue;
   }
@@ -175,11 +165,9 @@ img {
 
 .site-avatar {
   float: left;
-  vertical-align:middle;
-  width: 110px;
-  height: 110px;
+  width: 70px;
+  height: 70px;
   margin-right: 15px;
-  margin-up: 20px;
 
   @include mobile {
     float: none;
@@ -232,7 +220,7 @@ nav {
     float: none;
     margin-top: 9px;
     display: block;
-    font-size: 12px;
+    font-size: 16px;
   }
 
   a {
@@ -269,7 +257,7 @@ nav {
     border-left: 2px solid $gray;
     padding: 0.1em 1em;
     color: $gray;
-    font-size: 12px;
+    font-size: 22px;
     font-style: italic;
   }
 
@@ -279,7 +267,7 @@ nav {
 
   .read-more {
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: 15px;
   }
 }
 
@@ -295,15 +283,7 @@ footer {
   text-align: center;
 }
 
-.center-image
-{
-    margin: 0 auto;
-    display: block;
-}
-
-
-
-
+// Settled on moving the import of syntax highlighting to the bottom of the CSS
+// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
 @import "svg-icons";
-
