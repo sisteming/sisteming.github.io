@@ -51,7 +51,6 @@ h1 {
 
 h1 {
   font-size: 30px;
->>>>>>> barryclark/master
   a {
     color: inherit;
   }
@@ -63,7 +62,7 @@ h2 {
 =======
 h2 {
   font-size: 24px;
->>>>>>> barryclark/master
+
 }
 
 h3 {
@@ -76,7 +75,7 @@ h4 {
 =======
 h4 {
   font-size: 18px;
->>>>>>> barryclark/master
+
   color: $gray;
 }
 
@@ -309,9 +308,9 @@ footer {
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
-<<<<<<< HEAD
+
 @import "_highlights";
 =======
 @import "highlights";
 @import "svg-icons";
->>>>>>> barryclark/master
+
