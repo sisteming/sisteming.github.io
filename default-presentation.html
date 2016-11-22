@@ -1,0 +1,919 @@
+---
+layout: presentation
+title:  Default presentation
+permalink: /default-presentation/
+---
+
+
+class: center, middle, theBlackBackground
+background-image: url(img/cover2.jpg)
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain; 
+# **The rise of containers: from development to production using Docker**
+
+
+<br>
+## Marco Bonezzi
+<br>
+### marco@mongodb.com / @marcobonezzi
+
+---
+class: middle, left
+# **Agenda**
+
+
+### 1. Why containers?
+
+### 2. Building our first application with Docker
+
+### 3. Multicontainer application with Docker compose
+
+### 4. Deploying Docker containers on AWS or other Cloud providers
+
+### 5. Container orchestration with Docker swarm
+
+### 6. Case Study: Deploying a MongoDB cluster using Docker containers and cgroups
+
+
+---
+class: top, left		
+
+<img align="right" valign="top" src="img/marcoBonezzi.png" width="120">
+
+# **About me**
+
+
+
+
+###  **Marco Bonezzi** (@marcobonezzi)
+
+### TSE at **MongoDB**, Dublin
+
+### **TSE**: *Helping customers to be successful with MongoDB*
+
+### Experience in distributed systems, high availability and database technologies.
+
+
+
+<img align="right" valign="top" src="img/balena.png" width="200">
+### Fan of all things containerised!
+---
+class: top, left
+
+<!--//###################################################
+#												#
+# 1. Why containers?								#
+#												#
+#########################################################
+-->
+
+
+
+# **How many of you have experience with containers?**
+
+### 1. Ever heard of containers and Docker?
+
+--
+
+### 2. Deployed an application in a container using Docker?
+
+--
+
+### 3. Used docker compose or docker swarm?
+
+--
+
+### 4. Know the benefits of using microservices or containers for your organisation?
+
+
+---
+class: top, left
+# **What is a container and what do we mean by container?**
+
+### What is a container?
+--
+
+### How can containers help?
+
+--
+
+### Why organisations use containers?
+
+
+
+---
+class: top, left
+# **Containers are great!**
+
+ <table style="width:100%">
+  <tr>
+    <td>Different architectures in Development and Production</td>
+    <th><img align="right" valign="middle" src="img/dev.png" width="250"></th>
+  </tr>
+--
+
+  <tr>
+    <td>Co-located processes sharing resources</th>
+    <th><img align="right" valign="middle" src="img/cgroup.png" width="250"></th>
+  </tr>
+  
+--
+  <tr>
+    <td>Production != docker run my_new_shiny_cluster</td>
+    <td><img align="left" valign="middle" src="img/prod.png" width="250"></td>
+  </tr>
+</table> 
+
+---
+
+class: top, left
+# **What is Docker?**
+
+### Noun: ***a person employed in a port to load an unload ships*** (from "what is docker" on Google)
+
+### Docker containers:
+ - Isolated process in userspace
+ - Application + dependancies
+ - Shared kernel and libraries
+ - Can run on any infrastructure (or Cloud provider)
+
+<img align="right"  vertical-align: center src="img/engine.png" width="250">
+
+---
+
+class: top, left
+# **How can containers help?**
+
+### Ease of deployment + portability
+
+- Predefined patterns
+- Replicate environments
+
+### Resource Control
+
+- Set resource limits
+
+### Orchestration 
+
+- Decide where to deploy one or more containers based on rules / context
+
+### Create once, deploy everywhere  	
+
+---
+class: top, left
+# **Resource separation with cgroups**
+
+### Running multiple containers on the same host?
+
+Defining resource limits for each container can be useful
+<br>
+<img align="center"  vertical-align: middle src="img/cgroup-docker.png" width="800">
+
+---
+
+class: top, left
+# **Why organisations use containers?**
+
+According to ***"The Docker Survey, 2016"***:
+
+<img align="center"  vertical-align: middle src="img/why.png" width="800">
+
+---
+
+class: top, left
+# **Docker ecosystem**
+
+<img align="right"  vertical-align: middle src="img/machine.png" width="120">
+### - Provisioning and managing Dockerized hosts
+<br><br><br>
+--
+
+<img align="right"  vertical-align: middle src="img/compose.png" width="120">
+### - Define multi-container applications in a single file
+<br><br>
+--
+
+<img align="right"  vertical-align: middle src="img/swarm.png" width="120">
+### - Cluster of Docker hosts as a single Docker host
+
+---
+
+class: top, left
+# **Building our first application with Docker**
+
+We will start with something simple for our first app:
+
+- Python Flask 
+- MongoDB 
+
+--
+
+We will use:
+
+- 1 Container running python + flask
+- 1 Container running MongoDB
+
+--
+
+Steps we will follow for each:
+
+- **Dockerfile** (Define the image)
+
+--
+
+- **docker build** (build the image)
+
+--
+
+- **docker run** (run the image)
+
+---
+class: top, left
+# **Building the python + Flask container**
+
+Simple Flask python application that will retrieve information from a database.
+
+```shell
+├── app.py
+│   ├── app.py
+│   ├── index.html
+│   ├── requirements.txt
+│   ├── server.py
+│   └── templates
+│       └── index.html
+├── my_app.dockerfile
+├── server.py
+
+2 directories, 7 files
+```
+
+---
+
+class: top, left
+# **Building the python + Flask container**
+
+- **Dockerfile** (Define the image)
+
+
+```shell
+# Set the base image to Ubuntu
+FROM ubuntu
+# File Author / Maintainer
+MAINTAINER Marco Bonezzi
+# Add the application resources URL
+#RUN echo "deb http://archive.ubuntu.com/ubuntu/ $(lsb_release -sc) main universe" >> /etc/apt/sources.list
+# Update the sources list
+RUN apt-get update && apt-get -y install
+# Install basic applications
+RUN apt-get install -y tar git curl nano wget dialog net-tools build-essential
+# Install Python and Basic Python Tools
+RUN apt-get install -y python python-dev python-distribute python-pip
+# Copy the application folder inside the container
+ADD /my_app /my_app
+# Get pip to download and install requirements:
+RUN pip install -r /my_app/requirements.txt
+# Expose ports
+EXPOSE 80
+# Set the default directory where CMD will execute
+WORKDIR /my_app
+# Set the default command to execute
+CMD python server.py
+```
+---
+
+
+class: top, left
+# **Building the python + Flask container**
+
+- **docker build** (build the image)
+
+```shell
+docker build -t my_app -f my_app.dockerfile .
+```
+
+
+
+--
+
+- **docker run** (run the image)
+
+```shell
+docker run --name my_app -p 8080:80 -i -t my_app
+```
+
+---
+
+
+class: top, left
+# **Building the MongoDB container**
+
+- **Dockerfile** (Define the image)
+
+
+```shell
+FROM ubuntu
+MAINTAINER Marco Bonezzi "marco.bonezzi@10gen.com"
+#CREATE GROUP AND USER FOR MONGODB
+# add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
+RUN groupadd -r mongodb && useradd -r -g mongodb mongodb
+#UPDATE PACKAGES AND INSTALL NUMACTL
+RUN apt-get update \
+	&& apt-get install -y --no-install-recommends \
+		ca-certificates curl \
+		numactl \
+		gosu \
+        wget \
+        libcurl3 libpci3 libsensors4 libsnmp30 libwrap0 snmp \
+	&& rm -rf /var/lib/apt/lists/*
+
+# SETTING MONGODB VERSION TO WORK WITH
+ENV MONGO_MAJOR 3.4
+ENV MONGO_VERSION 3.4.0-rc3
+RUN mkdir /tmp/mongodb
+RUN cd /tmp/mongodb
+WORKDIR /tmp/mongodb
+```
+
+---
+
+
+class: top, left
+# **Building the MongoDB container**
+
+```shell
+RUN wget https://repo.mongodb.com/apt/ubuntu/dists/xenial/mongodb-enterprise/testing/multiverse/binary-amd64/mongodb-enterprise-server_3.4.0~rc3_amd64.deb
+RUN wget https://repo.mongodb.com/apt/ubuntu/dists/xenial/mongodb-enterprise/testing/multiverse/binary-amd64/mongodb-enterprise-mongos_3.4.0~rc3_amd64.deb
+RUN wget https://repo.mongodb.com/apt/ubuntu/dists/xenial/mongodb-enterprise/testing/multiverse/binary-amd64/mongodb-enterprise-tools_3.4.0~rc3_amd64.deb
+RUN wget https://repo.mongodb.com/apt/ubuntu/dists/xenial/mongodb-enterprise/testing/multiverse/binary-amd64/mongodb-enterprise-shell_3.4.0~rc3_amd64.deb
+# UPDATE REPOS AND INSTALL MONGODB WITH DEFINED VERSION
+#RUN set -x \
+#	&& apt-get update 
+RUN dpkg -i /tmp/mongodb/mongodb-*.deb	
+RUN	mv /etc/mongod.conf /etc/mongod.conf.orig
+
+# DATA DIRECTORY SETUP
+RUN mkdir -p /data/db && chown -R mongodb:mongodb /data/db
+# SETTING ENTRYPOINT
+COPY docker-entrypoint.sh /entrypoint.sh
+COPY mongod_wt.conf /etc/mongod.conf
+RUN chown -R mongodb:mongodb /etc/mongod.conf
+
+ENTRYPOINT ["/entrypoint.sh"]
+
+# PORT TO BE EXPOSED (inside container, different on host) 
+EXPOSE 27017
+EXPOSE 27019
+# COMMAND TO RUN WHEN RUNNING THE CONTAINER
+CMD ["-f", "/etc/mongod.conf"]
+```
+---
+
+
+class: top, left
+# **Building the MongoDB container**
+
+- **docker build** (build the image)
+
+```shell
+docker build -f mongodb.3.4.0.docker -t mongodb .
+```
+
+
+
+--
+
+- **docker run** (run the image)
+
+```shell
+docker run -d --hostname mongo1 --name mongo -p 27017:27017 mongodb mongod
+```
+
+
+
+---
+class: top, left
+# **Both containers now running...**
+
+- Python + Flask
+```shell
+docker run --name my_app -p 8080:80 -i -t my_app
+[14/Nov/2016:22:54:43] ENGINE Bus STARTING
+[14/Nov/2016:22:54:43] ENGINE Started monitor thread 'Autoreloader'.
+[14/Nov/2016:22:54:43] ENGINE Started monitor thread '_TimeoutMonitor'.
+[14/Nov/2016:22:54:43] ENGINE Serving on http://0.0.0.0
+[14/Nov/2016:22:54:43] ENGINE Bus STARTED
+```
+
+- MongoDB
+```shell
+ docker run -d --hostname mongo1 --name mongo -p 27017:27017 mongodb mongod
+9c0f550b10e30809af5362bf7d4c7d5e91619ac577bf6276147e9c780412122f
+```
+
+- Checking our containers running:
+
+```shell
+docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                 NAMES
+9c0f550b10e3        mongodb             "/entrypoint.sh mongo"   36 seconds ago      Up 35 seconds       0.0.0.0:27017->27017/tcp, 27019/tcp   mongo
+29e7c868f6ef        my_app              "/bin/sh -c 'python s"   3 minutes ago       Up 3 minutes        0.0.0.0:8080->80/tcp                    my_app
+```
+
+---
+class: top, left
+# **How is the application connecting to the DB on a different container?**
+
+```python
+app.config['MONGO_HOST'] = '192.168.0.101'
+app.config['MONGO_PORT'] = 27017
+app.config['MONGO_DBNAME'] = 'flask_demo'
+mongo = PyMongo(app, config_prefix='MONGO')
+```
+
+```shell
+*docker ps --format '{{.Names}}\t\t{{.Command}}\t\t{{.Ports}}'
+
+my_app		"/bin/sh -c 'python s"		0.0.0.0:8080->80/tcp
+mongo		"/entrypoint.sh mongo"		0.0.0.0:27017->27017/tcp, 27019/tcp
+```
+
+
+---
+class: top, left
+# **Multicontainer applications with Docker compose**
+
+- ### Define and run multi-container Docker applications
+
+- ### One (or multiple) Compose files to configure your application services
+
+- ### Deploy with a single command
+
+- ### Great for ease of deployment in development, testing or staging
+
+---
+class: top, left
+
+# **Compose: easy as a three-step process**
+
+### 1. Define your application environment with a Dockerfile (Done)
+
+### 2. Define the services for your app in a docker-compose.yml file
+
+### 3. Run *docker compose up* and it will start running your application based on multiple containers
+
+---
+class: top, left
+
+# **2. Define the services for your app in a docker-compose.yaml file**
+
+```yaml
+version: '2'
+services:
+
+  my_app:
+    image: my_app
+    ports:
+      - 8080:80
+    hostname: my_app
+    container_name: my_app
+    labels:
+      - "service=flask"
+
+  mongodb:
+    image: mongodb
+    ports:
+      - 27017:27017
+    hostname: mongod
+    container_name: mongod
+    labels:
+      - "service=mongodb"
+```
+
+---
+class: top, left
+
+# **3. Run *docker compose up* and it will start running your application based on multiple containers**
+
+```shell
+$ docker-compose up
+Creating my_app
+Creating mongod
+Attaching to mongod, my_app
+my_app      | [15/Nov/2016:22:38:38] ENGINE Bus STARTING
+my_app      | [15/Nov/2016:22:38:38] ENGINE Started monitor thread 'Autoreloader'.
+my_app      | [15/Nov/2016:22:38:38] ENGINE Started monitor thread '_TimeoutMonitor'.
+my_app      | [15/Nov/2016:22:38:38] ENGINE Serving on http://0.0.0.0
+my_app      | [15/Nov/2016:22:38:38] ENGINE Bus STARTED
+```
+
+### Our app is now ready at *http://localhost:8080/users*
+
+---
+class: top, left
+# Deploying Docker containers on AWS or other Cloud providers
+
+
+### *How can we easily provision new hosts to be used with Docker?*
+
+<img align="right"  vertical-align: middle src="docker-machine.png" width="300">
+
+## Docker machine
+
+- Provision new hosts
+
+- Select the instance configuration
+
+- Select the OS and install docker
+
+- Configure our docker client
+
+<br>
+
+We are now ready to run docker containers on hour new dockerized host
+---
+class: top, left
+
+# Deploying Docker containers on AWS or other Cloud providers
+
+### *How do we create a new host with Docker machine?*
+
+```shell
+docker-machine create --driver amazonec2 --amazonec2-region eu-west-1 \
+     --amazonec2-tags owner,marcob,expire-on,2016-12-15 \
+     --amazonec2-root-size 80 --amazonec2-use-ebs-optimized-instance \
+     --amazonec2-instance-type m3.2xlarge \
+     marcob-swarm-node-1
+```
+
+--
+### *Where can we deploy to?*
+
+Multiple options:
+
+- VirtualBox
+- Amazon AWS, Azure, Digital Ocean, Google Compute Engine
+- Openstack, Rackspace, Softlayer
+- Vmware (vCloud Air, Fusion, Sphere)
+
+
+---
+class: top, left
+
+# Example of docker machine on AWS
+
+
+```shell
+$ docker-machine create --driver amazonec2 --amazonec2-region eu-west-1 \
+     --amazonec2-tags owner,marcob,expire-on,2016-12-15 \
+     --amazonec2-root-size 80 --amazonec2-use-ebs-optimized-instance \
+     --amazonec2-instance-type m3.2xlarge \
+     marcob-swarm-nodeDub1
+     
+Running pre-create checks...
+Creating machine...
+(marcob-swarm-nodeDub1) Launching instance...
+Waiting for machine to be running, this may take a few minutes...
+Detecting operating system of created instance...
+Waiting for SSH to be available...
+Detecting the provisioner...
+Provisioning with ubuntu(systemd)...
+Installing Docker...
+Copying certs to the local machine directory...
+Copying certs to the remote machine...
+Setting Docker configuration on the remote daemon...
+Checking connection to Docker...
+Docker is up and running!
+To see how to connect your Docker Client to the Docker Engine running on this virtual machine, run: docker-machine env marcob-swarm-nodeDub1
+
+```
+---
+class: top, left
+# Container orchestration with Docker swarm
+
+## What is Swarm and what do we use it for?
+ - Native clustering for Docker
+ 
+ - Pool of Docker hosts managed as a single virtual Docker host
+ 
+ - Managed with Docker standard API
+ 
+ - Use: Scaling to multiple hosts + High availability
+
+
+---
+class: top, left
+# Introduction to Swarm mode
+
+### Starting with Docker v.1.12.0, we have a swarm mode in Docker Engine:
+
+- Natively manage cluster of Docker Engines
+
+- Deploy application services to a swarm
+
+- Some caveats compared to the original Docker swarm
+
+---
+class: top, left
+# Key points on when to use Swarm mode
+
+### Service: tasks to execute on the workers node
+
+- **Replicated service**: swarm manager distributes specific # of replicas among nodes (scale)
+
+- **Global service**: one task per service on every available node
+
+
+--
+class: top, left
+### Load balancing
+
+- Ingress load balancing to expose services
+
+- Swarm manager distributes requests among services within the cluster
+
+- https://docs.docker.com/engine/swarm/key-concepts/
+
+---
+class: top, left
+# Infrastructure used for Docker Swarm
+
+<img align="center"  src="img/swarm_arq.png" width="800">
+
+
+---
+class: top, left
+# Configuring a Docker Swarm
+
+<img align="center"  vertical-align: middle src="img/swarm_steps.png" width="800">
+
+---
+class: top, left
+# Orchestrating containers with Docker Swarm
+
+### Why Docker Swarm?
+
+<img align="right"  vertical-align: middle src="img/swarm_comp.png" width="400">
+
+### Evaluating Container Platforms at Scale
+- 1000 EC2 instances in a cluster
+
+- What is their performance at scale?
+
+- Can they operate at scale?
+
+- What does it take to support them at scale?
+
+From: *https://medium.com/on-docker/evaluating-container-platforms-at-scale-5e7b44d93f2c#.hgbdyhfmp*
+
+
+---
+class: top, left
+# Multi-host networking with Swarm
+### How can each container connect to other containers in different hosts?-  Swarm overlay container-to-container network
+-  Using the hostname defined in the Compose file
+
+<img align="center"  vertical-align: middle src="img/swarm_net.png" width="800">
+
+---
+class: top, left
+# Orchestrate containers deployment
+
+## Filters in Swarm to define deployment rules
+
+- Two categories: *node filters* and *container configuration filters*
+	
+	- **Node filters**: 
+		- Based on characteristics of the Docker host (or Docker daemon)
+	
+	- **Container configuration filters**: 
+		- Based on characteristics of containers, or on the availability of images on a host.
+
+
+---
+class: top, left
+# Orchestrate containers deployment
+
+## Labels in Swarm to define deployment rules
+
+
+- Property defined for a given container (i.e. role=primary)
+
+- Can be used when defining filters:
+
+- Examples:
+	- **Contrainst filters**: mark each container with a specific label
+
+	- **Affinity filters**: create attractions between containers (i.e. alter target node based on containers already running)
+
+
+---
+class: top, left
+# Case Study: Deploying a MongoDB cluster using Docker containers and cgroups
+
+ <table style="width:100%">
+  <tr>
+    <td><b>Replica Set</b>: Redundancy and fault tolerance</td>
+    <th><img align="right" valign="middle" src="img/cluster.png" width="250"></th>
+  </tr>
+  <tr>
+    <td><b>Sharded cluster</b>: Scalability</th>
+    <th><img align="right" valign="middle" src="img/replicaset.png" width="250"></th>
+  </tr>
+ </table> 
+
+Best practices:
+- High availability and resource colocation
+- Single member of a replica set / server
+- Shards as Replica Set
+
+
+---
+class: top, left
+# Combining all components for a successful solution
+
+- **Docker Engine and image**: 
+	- Where and how the `mongod` process runs, including configuration and release to use
+	
+- **Compose**: 
+	- How containers combine together to deploy replica sets or clusters
+
+- **Docker Machine**: 
+	- To get our AWS nodes setup and ready to run Docker containers
+
+- **Docker Swarm**: 
+	- How we orchestrate containers for highly available deployments
+
+
+
+---
+
+class: top, left
+# Summary of our deployment
+
+<img align="center" valign="center" src="img/swarm_arq_mdb.png" width="700">
+
+---
+
+
+class: top, left
+# Our dockerized MongoDB cluster
+
+<img align="center" valign="center" src="img/mongodb_arq.png" width="750">
+
+---
+
+class: top, left
+# Docker image
+
+If we like, we can push our image to http://hub.docker.com:
+
+```shell
+docker build -f mongodb.3.4.docker -t mongodb:3.4.0-rc3 .
+docker tag mongodb:3.4.0-rc3 marcob/mongodb-3.4.0-rc3
+* docker push marcob/mongodb-3.4.0-rc3
+```
+
+Once our image is published, running it on other hosts is as easy as:
+```shell
+docker run -d --hostname mongo1 --name mongo -p 27017:27017 marcob/mongodb-3.4.0-rc3 mongod
+```
+
+Now we can use this image for all our MongoDB deployments
+
+
+---
+class: top, left
+# Docker compose 
+
+**We can define multiple files to address different areas:**
+
+Labels common to each replica set
+
+```yaml
+  mongodb_replset_1:
+    marcob/mongodb-3.4.0-rc3
+    labels:
+      - "role=mongod"
+      - "replset=rs1"
+```
+Options specific to each container
+
+```yaml
+rs1a:
+    extends:
+      file: mdb_base.yaml
+      service: mongodb_replset_1
+    ports:
+      - 27027:27027
+    volumes:
+      - /mnt/data/rs1:/data
+    hostname: rs1a
+    container_name: rs1a
+    labels:
+      - "initialstate=primary"
+*    command: mongod --port 27027 --dbpath /data/ --logpath /data/mongodb/mongod_27027.log --logappend --replSet replset_1 --wiredTigerCacheSizeGB 16
+```
+---
+class: top, left
+# Docker compose 
+
+Filters to orchestrate each container deployment
+```yaml
+rs1a:
+    extends:
+      file: mdb_cgroup.yaml
+      service: rs1a
+    
+    environment:
+      - "affinity:replset!=rs1"
+      - "affinity:initialstate!=~primary"
+      - "constraint:node!=marcob-MDBW-swarm-master"
+```
+--
+
+And also cgroups limits for each container:
+
+```yaml
+ rs1a:
+    extends:
+      file: mdb_repl.yaml
+      service: rs1a
+    cpuset: "0"
+    mem_limit: "6442450944"
+    memswap_limit: "6442450944"
+```
+
+---
+
+class: top, left
+# Docker, cgroups and MongoDB
+
+When running any process inside a container, memory usage is a key point to understand
+
+<img align="center" valign="center" src="img/memory.png" width="750">
+
+
+---
+
+class: top, left
+# Orchestrating MongoDB containers with Docker Swarm
+
+Each container tagged with 2 labels...
+<img align="right" valign="top" src="img/container.png" width="250">
+
+<br><br><br><br><br>
+--
+...that can be used to orchestrate where we deploy each container:
+<img align="center" valign="center" src="img/mdb_swarm.png" width="800">
+---
+
+class: top, left
+# Summary
+
+## Docker containers can be really useful:
+
+- **Speed**: testing and deploying patterns instead of single processes
+	- Build once, deploy everywhere	
+
+<img align="right" valign="top" src="img/rs.png" width="300">
+- **Control**: Resource control and utilization	- Key to success with containers- **Agility**: Microservices architectures	- Making change less expensive- **Flexibility**: Multi vendor cloud opportunities
+	- AWS, Azure, Google, IBM, CloudFoundry
+
+---
+
+class: top, left
+# How successful customers use MongoDB with Docker
+
+<img align="center" valign="top" src="img/customers.png" width="700">
+
+- **Case Studies:**
+	- www.mongodb.com/blog
+
+- **"Enabling Microservices - Containers & Orchestration Explained"**
+	- www.mongodb.com/collateral/microservices-containers-and-orchestration-explained
+---
+
+class: center, left
+
+# Now it's YOUR turn!
+<br>
+## You can actually try this at home: 
+# https://github.com/sisteming/mongodb-swarm
+# https://github.com/sisteming/Dublin-masterclass
+---
+
+
+
+class: center, middle, theBlackBackground
+background-image: url(img/cover2.jpg)
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain; 
+
+
+# Thank you!
+
+marco@mongodb.com
+
+@marcobonezzi
