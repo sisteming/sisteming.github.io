@@ -16,12 +16,13 @@ avatar: /images/sisteming-logo.jpeg
 #
 
 # Includes an icon in the footer for each username you enter
-#<<<<<<< HEAD
+
 footer-links: 
   dribbble: 
   email: mbonezzi@archlinux.us
   facebook: 
   flickr: 
+  github: sisteming
   instagram:
   linkedin: marcobonezzi
   pinterest: 
@@ -41,46 +42,7 @@ google_analytics: UA-56573660-1
 # Used for Sitemap.xml and your RSS feed
 url: http://sisteming.github.io
 
-=======
-footer-links:
-  dribbble:
-  email:
-  facebook:
-  flickr:
-  github: barryclark/jekyll-now
-  instagram:
-  linkedin:
-  pinterest:
-  rss: # just type anything here for a working RSS icon
-  twitter: jekyllrb
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: # channel/<your_long_string> or user/<user-name>
-  googleplus: # anything in your profile username that comes after plus.google.com/
 
-
-# Enter your Disqus shortname (not your username) to enable commenting on posts
-# You can find your shortname on the Settings page of your Disqus account
-disqus:
-
-# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics:
-
-# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
-# Used for Sitemap.xml and your RSS feed
-url:
->>>>>>> barryclark/master
-
-# If you're hosting your site at a Project repository on GitHub pages
-# (http://yourusername.github.io/repository-name)
-# and NOT your User repository (http://yourusername.github.io)
-# then add in the baseurl here, like this: "/repository-name"
-baseurl: ""
-
-#
-# !! You don't need to change any of the configuration flags below !!
-#
-
-<<<<<<< HEAD
 markdown: kramdown
 highlighter: pygments
 #permalink: /:title/
@@ -104,12 +66,8 @@ kramdown:
 
 # Set the Sass partials directory, as we're using @imports
 sass:
-<<<<<<< HEAD
-  sass_dir: _scss
-  style: :compressed # You might prefer to minify using :compressed
-=======
   style: :expanded # You might prefer to minify using :compressed
->>>>>>> barryclark/master
+
 
 # Use the following plug-ins
 gems:
@@ -118,17 +76,7 @@ gems:
 
 # Exclude these files from your production _site
 exclude:
-<<<<<<< HEAD
     - Gemfile
     - Gemfile.lock
     - LICENSE
     - README.md
-
-
-=======
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - CNAME
->>>>>>> barryclark/master
