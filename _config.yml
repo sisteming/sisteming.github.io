@@ -44,7 +44,7 @@ url: http://sisteming.github.io
 
 
 markdown: kramdown
-highlighter: pygments
+
 #permalink: /:title/
 permalink:    /:year/:month/:day/:title/
 
