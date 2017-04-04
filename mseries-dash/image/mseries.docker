@@ -1,0 +1,41 @@
+FROM alpine:3.4
+MAINTAINER Marco Bonezzi <marco.bonezzi@10gen.com>
+
+# Update and install base packages
+RUN apk update && apk upgrade && apk add curl wget bash
+
+# Install python (no need for virtualenv as this is a container)
+RUN apk add --update python py-pip python-dev gcc build-base coreutils
+RUN pip install --upgrade pip
+RUN pip install pipelines influxdb pymongo python-dateutil python-dash humanfriendly pytz backports.functools_lru_cache parsedatetime
+
+WORKDIR /usr/app/
+COPY mseries-0.0.1.tar.gz /usr/app
+RUN pip install mseries-0.0.1.tar.gz --upgrade
+
+
+# Clean APK cache
+RUN rm -rf /var/cache/apk/*
+
+#RUN mkdir /usr/app
+WORKDIR /usr/app
+
+
+
+RUN rm -rf /usr/app/ftdc/*
+
+RUN mkdir -p /usr/app/ftdc
+#ENV FTDC_DIR /tmp/diag/
+#WORKDIR /tmp
+ARG FTDC_FILE
+ADD $FTDC_FILE /usr/app/file/
+RUN find /usr/app/file/ -iname "*metrics*" -exec cp "{}" /usr/app/ftdc/ \;
+RUN chmod -R 777 /usr/app/ftdc
+RUN ls -la /usr/app/ftdc
+
+WORKDIR /usr/app/ftdc/
+COPY logging.ini /usr/app/ftdc
+
+RUN ls -1 /usr/app/ftdc
+# Clean APK cache
+RUN rm -rf /var/cache/apk/*

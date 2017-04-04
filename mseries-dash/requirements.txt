@@ -1,0 +1,9 @@
+nap
+docopt
+requests
+docker-py
+python-dateutil
+python-dash
+humanfriendly
+pytz
+influxdb

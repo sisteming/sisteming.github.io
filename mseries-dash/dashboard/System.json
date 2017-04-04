@@ -1,0 +1,2235 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "System metrics",
+    "tags": [],
+    "style": "light",
+    "timezone": "UTC",
+    "editable": true,
+    "hideControls": false,
+    "sharedCrosshair": false,
+    "rows": [
+      {
+        "collapse": false,
+        "editable": true,
+        "height": "200px",
+        "panels": [
+          {
+            "aliasColors": {
+              "read out": "#BF1B00"
+            },
+            "bars": false,
+            "datasource": "mseries",
+            "decimals": 2,
+            "editable": true,
+            "error": false,
+            "fill": 2,
+            "grid": {
+              "threshold1": 80,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": 100,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false
+            },
+            "id": 1,
+            "interval": "$summarize",
+            "isNew": true,
+            "legend": {
+              "alignAsTable": false,
+              "avg": true,
+              "current": false,
+              "hideZero": false,
+              "max": true,
+              "min": false,
+              "rightSide": false,
+              "show": true,
+              "sideWidth": 20,
+              "sortDesc": true,
+              "total": false,
+              "values": true
+            },
+            "lines": true,
+            "linewidth": 2,
+            "links": [],
+            "nullPointMode": "null",
+            "percentage": false,
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+              {
+                "alias": "write out",
+                "yaxis": 1
+              }
+            ],
+            "span": 12,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "alias": "read out",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "$interval"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "hide": false,
+                "measurement": "serverStatus",
+                "policy": "default",
+                "refId": "A",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "serverStatus_wiredTiger_concurrentTransactions_read_out"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "max"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              },
+              {
+                "alias": "write out",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "$interval"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "hide": false,
+                "measurement": "serverStatus",
+                "policy": "default",
+                "refId": "B",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "serverStatus_wiredTiger_concurrentTransactions_write_out"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "max"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Concurrent R/W Tickets",
+            "tooltip": {
+              "msResolution": true,
+              "shared": true,
+              "sort": 0,
+              "value_type": "cumulative"
+            },
+            "transparent": true,
+            "type": "graph",
+            "xaxis": {
+              "show": true
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": "read out",
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": "write out",
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ]
+          }
+        ],
+        "repeat": null,
+        "showTitle": true,
+        "title": "Read / Write Activity"
+      },
+      {
+        "collapse": true,
+        "editable": true,
+        "height": "200px",
+        "panels": [
+          {
+            "aliasColors": {
+              "CPU: iowait": "#65C5DB",
+              "CPU: system": "#890F02",
+              "CPU: user": "#E0F9D7",
+              "read out": "#BA43A9"
+            },
+            "bars": false,
+            "datasource": "mseries",
+            "decimals": 2,
+            "editable": true,
+            "error": false,
+            "fill": 6,
+            "grid": {
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false
+            },
+            "id": 35,
+            "interval": "$summarize",
+            "isNew": true,
+            "legend": {
+              "alignAsTable": false,
+              "avg": true,
+              "current": false,
+              "hideZero": false,
+              "max": true,
+              "min": false,
+              "rightSide": false,
+              "show": true,
+              "sideWidth": 20,
+              "sortDesc": true,
+              "total": false,
+              "values": true
+            },
+            "lines": true,
+            "linewidth": 2,
+            "links": [],
+            "nullPointMode": "null",
+            "percentage": true,
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 12,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+              {
+                "alias": "CPU: idle",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "$interval"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "hide": true,
+                "measurement": "systemMetrics",
+                "policy": "default",
+                "refId": "A",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "systemMetrics_cpu_idle_ms"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "max"
+                    },
+                    {
+                      "params": [
+                        "1s"
+                      ],
+                      "type": "non_negative_derivative"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              },
+              {
+                "alias": "CPU: iowait",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "$interval"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "measurement": "systemMetrics",
+                "policy": "default",
+                "refId": "B",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "systemMetrics_cpu_iowait_ms"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "max"
+                    },
+                    {
+                      "params": [
+                        "1s"
+                      ],
+                      "type": "non_negative_derivative"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              },
+              {
+                "alias": "CPU: user",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "$interval"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "measurement": "systemMetrics",
+                "policy": "default",
+                "refId": "C",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "systemMetrics_cpu_user_ms"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "max"
+                    },
+                    {
+                      "params": [
+                        "1s"
+                      ],
+                      "type": "non_negative_derivative"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              },
+              {
+                "alias": "CPU: system",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "$interval"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "measurement": "systemMetrics",
+                "policy": "default",
+                "refId": "D",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "systemMetrics_cpu_system_ms"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "max"
+                    },
+                    {
+                      "params": [
+                        "1s"
+                      ],
+                      "type": "non_negative_derivative"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "CPU usage",
+            "tooltip": {
+              "msResolution": true,
+              "shared": true,
+              "sort": 2,
+              "value_type": "cumulative"
+            },
+            "transparent": true,
+            "type": "graph",
+            "xaxis": {
+              "show": true
+            },
+            "yaxes": [
+              {
+                "format": "ms",
+                "label": "CPU time",
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": "write out",
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": false
+              }
+            ]
+          },
+          {
+            "aliasColors": {
+              "CPU: iowait": "#65C5DB",
+              "CPU: system": "#890F02",
+              "CPU: user": "#E0F9D7",
+              "DISK: xvda queued": "#E24D42",
+              "DISK: xvda read time": "#629E51",
+              "DISK: xvda write time": "#6D1F62",
+              "DISK: xvdb IO time": "#3F2B5B",
+              "DISK: xvdb queued": "#58140C",
+              "DISK: xvdb read time": "#B7DBAB",
+              "DISK: xvdb write time": "#584477",
+              "read out": "#BA43A9"
+            },
+            "bars": false,
+            "datasource": "mseries",
+            "decimals": 2,
+            "editable": true,
+            "error": false,
+            "fill": 6,
+            "grid": {
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false
+            },
+            "id": 36,
+            "interval": "$summarize",
+            "isNew": true,
+            "legend": {
+              "alignAsTable": false,
+              "avg": true,
+              "current": false,
+              "hideZero": false,
+              "max": true,
+              "min": false,
+              "rightSide": false,
+              "show": true,
+              "sideWidth": 20,
+              "sortDesc": true,
+              "total": false,
+              "values": true
+            },
+            "lines": true,
+            "linewidth": 2,
+            "links": [],
+            "nullPointMode": "null",
+            "percentage": false,
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 12,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+              {
+                "alias": "DISK: xvdb queued",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "auto"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "measurement": "systemMetrics",
+                "policy": "default",
+                "refId": "A",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "systemMetrics_disks_xvdb_io_queued_ms"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "max"
+                    },
+                    {
+                      "params": [
+                        "10s"
+                      ],
+                      "type": "non_negative_derivative"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              },
+              {
+                "alias": "DISK: xvdb read time",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "auto"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "measurement": "systemMetrics",
+                "policy": "default",
+                "refId": "B",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "systemMetrics_disks_xvdb_read_time_ms"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "max"
+                    },
+                    {
+                      "params": [
+                        "10s"
+                      ],
+                      "type": "non_negative_derivative"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              },
+              {
+                "alias": "DISK: xvdb write time",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "auto"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "measurement": "systemMetrics",
+                "policy": "default",
+                "refId": "C",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "systemMetrics_disks_xvdb_write_time_ms"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "max"
+                    },
+                    {
+                      "params": [
+                        "1s"
+                      ],
+                      "type": "non_negative_derivative"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              },
+              {
+                "alias": "DISK: xvdb IO time",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "auto"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "hide": true,
+                "measurement": "systemMetrics",
+                "policy": "default",
+                "refId": "D",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "systemMetrics_disks_xvdb_io_time_ms"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "max"
+                    },
+                    {
+                      "params": [
+                        "1s"
+                      ],
+                      "type": "non_negative_derivative"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Disk usage",
+            "tooltip": {
+              "msResolution": true,
+              "shared": true,
+              "sort": 2,
+              "value_type": "cumulative"
+            },
+            "transparent": true,
+            "type": "graph",
+            "xaxis": {
+              "show": true
+            },
+            "yaxes": [
+              {
+                "format": "ms",
+                "label": "Disk usage",
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": "write out",
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": false
+              }
+            ]
+          }
+        ],
+        "showTitle": true,
+        "title": "System"
+      },
+      {
+        "collapse": false,
+        "editable": true,
+        "height": "150px",
+        "panels": [
+          {
+            "aliasColors": {
+              "active readers": "#BF1B00"
+            },
+            "bars": false,
+            "datasource": "mseries",
+            "decimals": 2,
+            "editable": true,
+            "error": false,
+            "fill": 3,
+            "grid": {
+              "threshold1": 100,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)"
+            },
+            "id": 2,
+            "interval": "$summarize",
+            "isNew": true,
+            "legend": {
+              "alignAsTable": false,
+              "avg": true,
+              "current": false,
+              "max": true,
+              "min": false,
+              "rightSide": false,
+              "show": true,
+              "sideWidth": 15,
+              "total": false,
+              "values": true
+            },
+            "lines": true,
+            "linewidth": 2,
+            "links": [],
+            "nullPointMode": "null",
+            "percentage": false,
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+              {
+                "alias": "active writers",
+                "yaxis": 2
+              }
+            ],
+            "span": 12,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "alias": "active readers",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "auto"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "measurement": "serverStatus",
+                "policy": "default",
+                "refId": "A",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "serverStatus_globalLock_activeClients_readers"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "max"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              },
+              {
+                "alias": "active writers",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "$interval"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "measurement": "serverStatus",
+                "policy": "default",
+                "refId": "B",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "serverStatus_globalLock_activeClients_writers"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "max"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Active readers / writers",
+            "tooltip": {
+              "msResolution": true,
+              "shared": true,
+              "sort": 0,
+              "value_type": "cumulative"
+            },
+            "transparent": true,
+            "type": "graph",
+            "xaxis": {
+              "show": true
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": "active readers",
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": "active writers",
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ]
+          },
+          {
+            "aliasColors": {
+              "queued readers": "#BA43A9"
+            },
+            "bars": false,
+            "datasource": "mseries",
+            "decimals": 2,
+            "editable": true,
+            "error": false,
+            "fill": 8,
+            "grid": {
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)"
+            },
+            "id": 3,
+            "interval": "$summarize",
+            "isNew": true,
+            "legend": {
+              "alignAsTable": false,
+              "avg": true,
+              "current": false,
+              "max": true,
+              "min": false,
+              "rightSide": false,
+              "show": true,
+              "sideWidth": 20,
+              "total": false,
+              "values": true
+            },
+            "lines": true,
+            "linewidth": 2,
+            "links": [],
+            "nullPointMode": "null",
+            "percentage": false,
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+              {
+                "alias": "queued writers",
+                "yaxis": 2
+              }
+            ],
+            "span": 12,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "alias": "queued readers",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "$interval"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "measurement": "serverStatus",
+                "policy": "default",
+                "refId": "A",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "serverStatus_globalLock_currentQueue_readers"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "max"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              },
+              {
+                "alias": "queued writers",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "$interval"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "measurement": "serverStatus",
+                "policy": "default",
+                "refId": "B",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "serverStatus_globalLock_currentQueue_writers"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "max"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Queued readers / writers",
+            "tooltip": {
+              "msResolution": true,
+              "shared": true,
+              "sort": 0,
+              "value_type": "cumulative"
+            },
+            "transparent": true,
+            "type": "graph",
+            "xaxis": {
+              "show": true
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": "queued readers",
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": "queued writers",
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ]
+          }
+        ],
+        "showTitle": true,
+        "title": "Active / Queued readers and writers"
+      },
+      {
+        "collapse": false,
+        "editable": true,
+        "height": "200px",
+        "panels": [
+          {
+            "aliasColors": {
+              "cache: 80% configured size": "#890F02",
+              "cache: 95% configured size": "#6ED0E0",
+              "cache: bytes currently in use": "#6D1F62",
+              "resident memory": "#052B51"
+            },
+            "bars": false,
+            "datasource": "mseries",
+            "decimals": 2,
+            "editable": true,
+            "error": false,
+            "fill": 7,
+            "grid": {
+              "threshold1": 11.38,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": 13.51,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)"
+            },
+            "hideTimeOverride": false,
+            "id": 4,
+            "interval": "$summarize",
+            "isNew": true,
+            "legend": {
+              "alignAsTable": false,
+              "avg": true,
+              "current": false,
+              "hideEmpty": false,
+              "hideZero": false,
+              "max": true,
+              "min": false,
+              "rightSide": false,
+              "show": true,
+              "sideWidth": 8,
+              "sortDesc": true,
+              "total": false,
+              "values": true
+            },
+            "lines": true,
+            "linewidth": 2,
+            "links": [],
+            "nullPointMode": "null",
+            "percentage": false,
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+              {
+                "alias": "cache: 95% configured size",
+                "yaxis": 1
+              },
+              {
+                "alias": "cache: 80% configured size",
+                "yaxis": 1
+              },
+              {
+                "alias": "cache configured size",
+                "yaxis": 1
+              }
+            ],
+            "span": 12,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "alias": "cache configured size",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "$interval"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "hide": false,
+                "measurement": "serverStatus",
+                "policy": "default",
+                "refId": "D",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "serverStatus_wiredTiger_cache_maximum bytes configured"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "max"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              },
+              {
+                "alias": "cache: 95% configured size",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "$interval"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "measurement": "serverStatus",
+                "policy": "default",
+                "refId": "B",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "serverStatus_wiredTiger_cache_maximum_bytes_configured"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "max"
+                    },
+                    {
+                      "params": [
+                        "*0.95"
+                      ],
+                      "type": "math"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              },
+              {
+                "alias": "resident memory",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "$interval"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "measurement": "serverStatus",
+                "policy": "default",
+                "refId": "E",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "serverStatus_mem_resident"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "mean"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              },
+              {
+                "alias": "cache: 80% configured size",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "$interval"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "hide": false,
+                "measurement": "serverStatus",
+                "policy": "default",
+                "refId": "C",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "serverStatus_wiredTiger_cache_maximum_bytes_configured"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "max"
+                    },
+                    {
+                      "params": [
+                        "*0.8"
+                      ],
+                      "type": "math"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              },
+              {
+                "alias": "cache: bytes currently in use",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "$interval"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "hide": false,
+                "measurement": "serverStatus",
+                "policy": "default",
+                "refId": "A",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "serverStatus_wiredTiger_cache_bytes_currently_in_the_cache"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "mean"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Cache usage",
+            "tooltip": {
+              "msResolution": true,
+              "shared": false,
+              "sort": 2,
+              "value_type": "cumulative"
+            },
+            "transparent": true,
+            "type": "graph",
+            "xaxis": {
+              "show": true
+            },
+            "yaxes": [
+              {
+                "format": "bytes",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "bytes",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ]
+          },
+          {
+            "aliasColors": {
+              "pages written from cache": "#447EBC"
+            },
+            "bars": false,
+            "datasource": "mseries",
+            "editable": true,
+            "error": false,
+            "fill": 8,
+            "grid": {
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)"
+            },
+            "id": 5,
+            "interval": "$summarize",
+            "isNew": true,
+            "legend": {
+              "alignAsTable": false,
+              "avg": true,
+              "current": false,
+              "max": true,
+              "min": false,
+              "rightSide": false,
+              "show": true,
+              "total": false,
+              "values": true
+            },
+            "lines": true,
+            "linewidth": 2,
+            "links": [],
+            "nullPointMode": "null",
+            "percentage": false,
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+              {
+                "alias": "pages written from cache",
+                "yaxis": 2
+              }
+            ],
+            "span": 12,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "alias": "pages read into cache",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "$interval"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "measurement": "serverStatus",
+                "policy": "default",
+                "refId": "A",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "serverStatus_wiredTiger_cache_pages_read_into_cache"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "mean"
+                    },
+                    {
+                      "params": [
+                        "10s"
+                      ],
+                      "type": "non_negative_derivative"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              },
+              {
+                "alias": "pages written from cache",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "$interval"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "measurement": "serverStatus",
+                "policy": "default",
+                "refId": "B",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "serverStatus_wiredTiger_cache_pages_written_from_cache"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "mean"
+                    },
+                    {
+                      "params": [
+                        "10s"
+                      ],
+                      "type": "non_negative_derivative"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Pages read into / written from cache",
+            "tooltip": {
+              "msResolution": true,
+              "shared": true,
+              "sort": 0,
+              "value_type": "cumulative"
+            },
+            "transparent": true,
+            "type": "graph",
+            "xaxis": {
+              "show": true
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": "pages read into cache",
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": "pages written from cache",
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ]
+          },
+          {
+            "aliasColors": {
+              "bytes written from cache": "#BA43A9"
+            },
+            "bars": false,
+            "datasource": "mseries",
+            "editable": true,
+            "error": false,
+            "fill": 8,
+            "grid": {
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)"
+            },
+            "id": 6,
+            "interval": "$summarize",
+            "isNew": true,
+            "legend": {
+              "alignAsTable": false,
+              "avg": true,
+              "current": false,
+              "max": true,
+              "min": false,
+              "rightSide": false,
+              "show": true,
+              "total": false,
+              "values": true
+            },
+            "lines": true,
+            "linewidth": 2,
+            "links": [],
+            "nullPointMode": "null",
+            "percentage": false,
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+              {
+                "alias": "bytes written from cache",
+                "yaxis": 2
+              }
+            ],
+            "span": 12,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "alias": "bytes read into cache",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "$interval"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "measurement": "serverStatus",
+                "policy": "default",
+                "refId": "A",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "serverStatus_wiredTiger_cache_bytes_read_into_cache"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "mean"
+                    },
+                    {
+                      "params": [
+                        "10s"
+                      ],
+                      "type": "non_negative_derivative"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              },
+              {
+                "alias": "bytes written from cache",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "$interval"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "measurement": "serverStatus",
+                "policy": "default",
+                "refId": "B",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "serverStatus_wiredTiger_cache_bytes_written_from_cache"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "mean"
+                    },
+                    {
+                      "params": [
+                        "10s"
+                      ],
+                      "type": "non_negative_derivative"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  }
+                ]
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Bytes read into / written from cache",
+            "tooltip": {
+              "msResolution": true,
+              "shared": true,
+              "sort": 0,
+              "value_type": "cumulative"
+            },
+            "transparent": true,
+            "type": "graph",
+            "xaxis": {
+              "show": true
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": "bytes read into cache",
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": "bytes written from cache",
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ]
+          }
+        ],
+        "showTitle": true,
+        "title": "Memory and cache usage"
+      },
+      {
+        "collapse": false,
+        "editable": true,
+        "height": "150px",
+        "panels": [
+          {
+            "aliasColors": {},
+            "bars": false,
+            "datasource": "mseries",
+            "editable": true,
+            "error": false,
+            "fill": 6,
+            "grid": {
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)"
+            },
+            "id": 19,
+            "interval": "$summarize",
+            "isNew": true,
+            "legend": {
+              "alignAsTable": false,
+              "avg": true,
+              "current": false,
+              "max": true,
+              "min": false,
+              "rightSide": false,
+              "show": true,
+              "total": false,
+              "values": true
+            },
+            "lines": true,
+            "linewidth": 2,
+            "links": [],
+            "nullPointMode": "null",
+            "percentage": false,
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 12,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "alias": "checkpoint currently running",
+                "dsType": "influxdb",
+                "groupBy": [
+                  {
+                    "params": [
+                      "$interval"
+                    ],
+                    "type": "time"
+                  },
+                  {
+                    "params": [
+                      "null"
+                    ],
+                    "type": "fill"
+                  }
+                ],
+                "measurement": "serverStatus",
+                "policy": "default",
+                "refId": "A",
+                "resultFormat": "time_series",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "serverStatus_wiredTiger_transaction_transaction_checkpoint_currently_running"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "mean"
+                    }
+                  ]
+                ],
+                "tags": [
+                  {
+                    "key": "hostname",
+                    "operator": "=~",
+                    "value": "/^$hostname$/"
+                  },
+                  {
+                    "condition": "AND",
+                    "key": "project",
+                    "operator": "=~",
+                    "value": "/^$project$/"
+                  }
+                ]
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Checkpoint currently running",
+            "tooltip": {
+              "msResolution": true,
+              "shared": true,
+              "sort": 0,
+              "value_type": "cumulative"
+            },
+            "transparent": true,
+            "type": "graph",
+            "xaxis": {
+              "show": true
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ]
+          }
+        ],
+        "showTitle": true,
+        "title": "Checkpoints"
+      }
+    ],
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "timepicker": {
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+      ]
+    },
+    "templating": {
+      "list": [
+        {
+          "current": {},
+          "datasource": "mseries",
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "project",
+          "options": [],
+          "query": "SHOW TAG VALUES WITH KEY = \"project\"",
+          "refresh": 1,
+          "regex": "",
+          "type": "query"
+        },
+        {
+          "current": {},
+          "datasource": "mseries",
+          "hide": 0,
+          "includeAll": true,
+          "multi": true,
+          "name": "hostname",
+          "options": [],
+          "query": "SHOW TAG VALUES WITH KEY = \"hostname\"",
+          "refresh": 1,
+          "type": "query"
+        },
+        {
+          "auto": true,
+          "auto_count": 5,
+          "auto_min": "1s",
+          "current": {
+            "tags": [],
+            "text": "1m",
+            "value": "1m"
+          },
+          "datasource": null,
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "summarize",
+          "options": [
+            {
+              "selected": false,
+              "text": "auto",
+              "value": "$__auto_interval"
+            },
+            {
+              "selected": false,
+              "text": "1s",
+              "value": "1s"
+            },
+            {
+              "selected": true,
+              "text": "1m",
+              "value": "1m"
+            },
+            {
+              "selected": false,
+              "text": "10m",
+              "value": "10m"
+            },
+            {
+              "selected": false,
+              "text": "30m",
+              "value": "30m"
+            },
+            {
+              "selected": false,
+              "text": "1h",
+              "value": "1h"
+            },
+            {
+              "selected": false,
+              "text": "6h",
+              "value": "6h"
+            },
+            {
+              "selected": false,
+              "text": "12h",
+              "value": "12h"
+            },
+            {
+              "selected": false,
+              "text": "1d",
+              "value": "1d"
+            },
+            {
+              "selected": false,
+              "text": "7d",
+              "value": "7d"
+            },
+            {
+              "selected": false,
+              "text": "14d",
+              "value": "14d"
+            },
+            {
+              "selected": false,
+              "text": "30d",
+              "value": "30d"
+            }
+          ],
+          "query": "1s,1m,10m,30m,1h,6h,12h,1d,7d,14d,30d",
+          "refresh": 0,
+          "type": "interval"
+        }
+      ]
+    },
+    "annotations": {
+      "list": []
+    },
+    "refresh": "1m",
+    "schemaVersion": 12,
+    "version": 1,
+    "links": [],
+    "gnetId": null
+  },
+  "overwrite": true
+}
