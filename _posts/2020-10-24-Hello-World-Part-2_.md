@@ -14,7 +14,7 @@ Yesterday, for some strange reason, an email from 2016 from my dear colleague Eo
 
 Going through it, I spotted that he also listed a talk I did back then in 2016 on containers, docker, swarm and of course, MongoDB. Looking at the slides made me remember not only the effort put on that talk but also a bit of those times 4 years ago. 
 
-If you're curious, here is a link to that talk: http://sisteming.github.io/containers/#1 (actually hosted on github pages).
+If you're curious, here is a link to that talk: [The rise of containers: from development to production using Docker](http://sisteming.github.io/containers/#1) (actually hosted on github pages).
 
 ## Back to 2020 and beyond: next steps
 
